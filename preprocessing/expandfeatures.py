@@ -35,11 +35,18 @@ class ExpandFeatures():
 
     def expand_features(self, data):
         features = [i for i in range(len(data[0]))]
+        features = features[1:]
 
         for line in data:
             for f1, f2 in combinations(features, 2):
-                cnf = line[f1] or line[f2]
-                line.append(cnf)
+                x_or_y = line[f1] or line[f2]
+                notx_or_y = not line[f1] or line[f2]
+                x_or_noty = line[f1] or not line[f2]
+                x_xor_y = line[f1] ^ line[f2]
+                line.append(int(x_or_y))
+                line.append(int(notx_or_y))
+                line.append(int(x_or_noty))
+                line.append(int(x_xor_y))
         
         return data
 

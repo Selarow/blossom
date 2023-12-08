@@ -16,5 +16,5 @@ The number of new features added is $\binom{n}{2}$ where $n$ is the number of fe
 ### Usage
 
 ```
-python preprocessing.py dataset.txt dataset_expanded.txt
+python expandfeatures.py [first, last] dataset.txt dataset_expanded.txt
 ```
