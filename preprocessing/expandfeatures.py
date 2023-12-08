@@ -4,7 +4,13 @@ from itertools import combinations
 
 
 class ExpandFeatures():
-    def __init__(self, file, new_file):
+    NUM_CNF = 4
+
+    def __init__(self, cnfs, file, new_file):
+        self.cnfs = [cnf for cnf in map(int, str(cnfs))]
+        if len(self.cnfs) != self.NUM_CNF:
+            raise Exception("Invalid cnfs") 
+        
         self.file = file
         self.new_file = new_file
         data = self.parse_file(self.file)
@@ -39,21 +45,29 @@ class ExpandFeatures():
 
         for line in data:
             for f1, f2 in combinations(features, 2):
-                x_or_y = line[f1] or line[f2]
-                notx_or_y = not line[f1] or line[f2]
-                x_or_noty = line[f1] or not line[f2]
-                x_xor_y = line[f1] ^ line[f2]
-                line.append(int(x_or_y))
-                line.append(int(notx_or_y))
-                line.append(int(x_or_noty))
-                line.append(int(x_xor_y))
+                if self.cnfs[0] == 1:
+                    x_or_y = line[f1] or line[f2]
+                    line.append(int(x_or_y))
+                
+                if self.cnfs[1] == 1:
+                    notx_or_y = not line[f1] or line[f2]
+                    line.append(int(notx_or_y))
+                
+                if self.cnfs[2] == 1:
+                    x_or_noty = line[f1] or not line[f2]
+                    line.append(int(x_or_noty))
+                
+                if self.cnfs[3] == 1:
+                    x_xor_y = line[f1] ^ line[f2]
+                    line.append(int(x_xor_y))
         
         return data
 
 
 
 if __name__ == "__main__":
-    file_name = sys.argv[1]
-    new_file_name = sys.argv[2]
-    ExpandFeatures(file_name, new_file_name)
+    cnfs = sys.argv[1]
+    file_name = sys.argv[2]
+    new_file_name = sys.argv[3]
+    ExpandFeatures(cnfs, file_name, new_file_name)
     
