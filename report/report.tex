@@ -1,0 +1,90 @@
+\documentclass{report}
+
+\usepackage{graphicx}
+\usepackage{multibib}
+
+
+\begin{document}
+
+
+\begin{titlepage}
+    \newcommand{\HRule}{\rule{\linewidth}{0.5mm}} %Horizontal line break%
+    \center
+    \textsc{\LARGE Université Toulouse III Paul Sabatier}\\[2.5cm]
+    \textsc{\Large Master Thesis Report}\\[0.5cm]
+    \textsc{\large Computer Science for Aerospace}\\[2.5cm]
+
+    \HRule\\[0.5cm]
+    {\huge \bf Multivariate Decision Tree Classification}\\[0.5cm]
+    \HRule\\[1.5cm]
+
+    \begin{minipage}{0.4\textwidth}
+		\begin{flushleft}
+			\large
+			\textit{Author}\\
+			Dany Morales
+		\end{flushleft}
+	\end{minipage}
+    \begin{minipage}{0.4\textwidth}
+		\begin{flushright}
+			\large
+			\textit{Supervisors}\\
+			Martin Cooper\\
+            Emmanuel Hebrard
+		\end{flushright}
+	\end{minipage}
+
+    \vfill
+    \large January 2024
+
+    \includegraphics[width=0.5\textwidth]{logo.png}
+\end{titlepage}
+
+\newpage
+\tableofcontents
+
+\newpage
+\chapter*{Introduction}
+\paragraph{} This report is about the work achieved during the M2 Computer Science for Aerospace thesis.
+The supervisors are Mr. Martin Cooper at the \textit{Institut de Recherche en Informatique de Toulouse (IRIT)} and
+Mr. Emmanuel Hebrard at the \textit{Laboratoire d'Analyse et d'Architecture des Systèmes in Toulouse (LAAS)}.
+The goal of this master thesis is to implement a way for the decision tree classification algorithm called Blossom
+to support multivariate decision trees. In this report, we will first introduce useful notions
+related to this topic with a brief state of the art of decision tree classification. Afterwards, we will
+present what we have done so far and the results we have obtained. Finally we will overview what we are
+planning for the rest of the thesis.
+
+
+\chapter{Preliminary research}
+\section{Decision trees}
+\section{Classification concepts} %remove maybe?%
+\section{Multivariate decision trees}
+
+
+\chapter{State of the art}
+\section{Decision tree learning} %replace with classification concepts?%
+\section{Heuristic algorithms}
+\section{Optimal algorithms}
+
+
+\chapter{Actual work}
+\section{Objective and expected results}
+\section{Preprocessing approach}
+\section{Other possible approaches}
+
+
+\chapter{Analysis}
+\section{Discussion}
+\section{Performance}
+\section{Limits}
+
+
+\chapter*{Conclusion}
+
+
+\bibliographystyle{unsrt}
+\bibliography{references}
+\cite{multivariate-explaining} \cite{blossom} \cite{murtree} \cite{wiki-decision-tree}
+
+
+\end{document}
