@@ -1,0 +1,12 @@
+d readtime=0.00343
+d sorttime=3.4e-05
+d duplicate=92 suppressed=1 ratio=0.783333 count=120 negative=5 positive=21 final_count=26
+d preprocesstime=6.7e-05
+d inputtime=0.003714
+d feature=276 feature_reduction=186
+--------------------------------------[search]--------------------------------------
+d accuracy=0.9915 error=1    depth=1   size=3   choices=1         mem=4   time=0
+-------------------------------------[optimal]--------------------------------------
+d accuracy=0.9915 error=1    depth=1   size=3   choices=1         mem=4   time=0
+p solution verified (0 / 0)
+d test_error=0 test_accuracy=1
