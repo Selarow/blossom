@@ -1,7 +1,19 @@
-\documentclass{report}
+\documentclass[12pt]{report}
 
+\usepackage{titlesec}
 \usepackage{graphicx}
 \usepackage{multibib}
+\usepackage{amsthm}
+\usepackage{algorithm2e}
+\usepackage[a4paper, total={6in, 9in}]{geometry}
+\titleformat{\chapter}[display] {\normalfont\Huge\bfseries}{\chaptertitlename\ \thechapter}{0pt}{\Huge}
+\titlespacing{\chapter}{0cm}{0cm}{1cm}
+\theoremstyle{definition}
+\newtheorem*{example}{Example}
+\theoremstyle{definition}
+\newtheorem*{algo}{Algorithm}
+\RestyleAlgo{ruled}
+
 
 
 \begin{document}
@@ -46,10 +58,10 @@
 \newpage
 \chapter*{Introduction}
 \paragraph{} This report is about the work achieved during the M2 Computer Science for Aerospace thesis.
-The supervisors are Mr. Martin Cooper at the \textit{Institut de Recherche en Informatique de Toulouse (IRIT)} and
-Mr. Emmanuel Hebrard at the \textit{Laboratoire d'Analyse et d'Architecture des Systèmes in Toulouse (LAAS)}.
-The goal of this master thesis is to implement a way for the decision tree classification algorithm called Blossom
-to support multivariate decision trees. In this report, we will first introduce useful notions
+The supervisors are Mr. Martin Cooper at the \textit{Institut de Recherche en Informatique de Toulouse (IRIT)}
+and Mr. Emmanuel Hebrard at the \textit{Laboratoire d'Analyse et d'Architecture des Systèmes in Toulouse (LAAS)}.
+The goal of this master thesis is to implement a way for the decision tree classification algorithm called
+Blossom to support multivariate decision trees. In this report, we will first introduce useful notions
 related to this topic with a brief state of the art of decision tree classification. Afterwards, we will
 present what we have done so far and the results we have obtained. Finally we will overview what we are
 planning for the rest of the thesis.
@@ -65,13 +77,120 @@ planning for the rest of the thesis.
 \chapter{State of the art}
 \section{Decision tree learning} %replace with classification concepts?%
 \section{Heuristic algorithms}
+\begin{algo}[ID3]
+    Iterative Dichotomiser (1986) is a greedy algorithm developed by Ross Quilan that splits the dataset
+    using the information gain metric. This algorithm is the one we implemented in Python during our TER.\\
+    $\mathcal{D}$ is the input dataset and $\mathcal{F}$ contains the features of a given set.
+
+\begin{algorithm}
+    \caption{ID3}\label{alg:two}
+    \DontPrintSemicolon
+    \KwData{$\mathcal{D}$}
+    \SetKwFunction{BuildTree}{BuildTree}
+    \SetKwFunction{BestSplit}{BestSplit}
+
+    \SetKwProg{Bn}{Function}{:}{}
+    \Bn{\BuildTree{$S, depth_{max}$}}{
+        \If{$depth \leq depth_{max}$}{
+            $(left, right) \gets \BestSplit{S}$\;
+            $subtree_L \gets \BuildTree{left}$\;
+            $subtree_R \gets \BuildTree{right}$\;
+            \KwRet $Node(subtree_L, subtree_R)$
+        }
+        \KwRet $Leaf(S)$\;
+    }
+    \;
+    \SetKwProg{Sn}{Function}{:}{}
+    \Sn{\BestSplit{$S$}}{
+        $IG \gets 0$
+
+        \ForEach{$f \in \mathcal{F}$}{
+            $\mathcal{T} \gets thresholds()$
+
+            \ForEach{$t \in \mathcal{T}$}{
+                $(l, r) \gets split(S, t, f)$
+
+                \If{$IG \neq \max(IG, infogain(S, l, r))$}{
+                    $(left, right) \gets (l, r)$\;
+                    $IG \gets infogain(S, l, r)$
+                }
+            }
+        }
+        \KwRet $(left, right)$
+    }
+    \;
+
+    \BuildTree{$\mathcal{D}$}
+\end{algorithm}
+
+\begin{itemize}
+    \item $thresholds()$ gives all the possible values of a feature $f$
+    \item $split(S, t, f)$ splits the dataset $S$ at the treshold value $t$ on the feature $f$
+    \item $infogain(S, l, r)$ computes the information gain of the split, so the set $S=l+r$ 
+\end{itemize}
+\end{algo}
+
+\begin{algo}[C4.5]
+    Developed in 1993 by Ross Quilan, it is the successor of ID3 and works the same way. It is an extension
+    of ID3 offering several improvements. This version can handle both continuous and discrete values.
+    Some post processing is added called pruning: it eliminates branches that do not provide additional
+    information. Further versions of this algorithm have been made mainly for performance improvements but
+    the core principle stays the same.
+\end{algo}
+
+\begin{algo}[CART]
+    Classification and Regression Trees, similarly to ID3 and C4.5 separates the data at each node on a given
+    threshold and recursively iterates. It also supports continuous and discrete values. Unlike the algorithms
+    above, CART uses the gini impurity measure to split the dataset. Trees are grown to their maximal size
+    without stopping rules then, cost-complexity pruning is done which is a more advanced pruning technique
+    than the one from C4.5.
+\end{algo}
+
 \section{Optimal algorithms}
+\begin{algo}[DL8]
+\end {algo}
+
+\begin{algo}[MurTree]
+\end {algo}
+
+\begin{algo}[Blossom]
+\end {algo}
 
 
 \chapter{Actual work}
 \section{Objective and expected results}
+\paragraph{} The objective of this master thesis is to adapt the Blossom algorithm to support multivariate
+decision trees. Since Blossom is an anytime algorithm, even with a very large dataset and many features,
+we can always expect a result compared to a traditional heuristic algorithm, thus Blossom seems particularly
+adapted for experimenting on MDT's. To achieve this, we have thought about several approaches: modify the
+input datset file (preprocessing approach) or change the algorithm code itself (algorithmic approach).
+Depending on the size of the dataset, we expect varying results. On a smaller dataset, given enough
+processing time, we expect to have optimal MDT's. However, on very large datasets, adding all the feature
+combinations will probably cause the algorithm to reach the maximum time chosen and interrupt the execution.
+It is important to note that the preprocessing apporach is not intended to be used on massive datasets as
+the number of added features will become too unreasonable, creating files serveral gigabytes in size,
+too tedious to work with. 
+
 \section{Preprocessing approach}
+\paragraph{} For the preprocessing approach, we made a simple python script to expand the features of a binary
+dataset. The script can add features of value $a \lor b$ for each possible combination of two distinct
+features a and b present in the inital dataset.\\
+
+\begin{example}
+    For a dataset containing four features $a$, $b$, $c$ and $d$, the script will add the following six new
+    features: $a \lor b$, $a \lor c$, $a \lor d$, $b \lor c$, $b \lor d$, $c \lor d$.
+\end{example}
+
+\paragraph{} The number of new features added is $n \choose 2$ where $n$ is the number of features in
+the initial dataset. The other supported cnfs are $(\neg x \lor y)$, $(x \lor \neg y)$, $(\neg x \lor \neg y)$, 
+$(x \oplus y)$. The script allows to expand a dataset with the cnfs chosen or all of them. The expanded
+dataset is given in output and is directly ready to use with the Blossom algorithm. It is important to note
+we do not do extra preprocessing to verify if two features have the same values since Blossom already has
+some preprocessing steps, including feature reduction that would eliminate any unecessary or redundant feature.
+
 \section{Algorithmic approach}
+\paragraph{} This approach would involve rewriting entirely or partially Blossom. We are to work on this
+approach or find a different one on the second part of the master thesis.
 
 
 \chapter{Analysis}
