@@ -4,6 +4,7 @@
 \usepackage{graphicx}
 \usepackage{multibib}
 \usepackage{amsthm}
+\usepackage{tikz}
 \usepackage{algorithm2e}
 \usepackage[a4paper, total={6in, 9in}]{geometry}
 \titleformat{\chapter}[display] {\normalfont\Huge\bfseries}{\chaptertitlename\ \thechapter}{0pt}{\Huge}
@@ -12,7 +13,10 @@
 \newtheorem*{example}{Example}
 \theoremstyle{definition}
 \newtheorem*{algo}{Algorithm}
+\theoremstyle{definition}
+\newtheorem*{method}{Method}
 \RestyleAlgo{ruled}
+\counterwithout{figure}{chapter}
 
 
 
@@ -70,8 +74,137 @@ planning for the rest of the thesis.
 
 \chapter{Preliminary research}
 \section{Decision trees}
+
+\paragraph{} A decision tree is a type of tree that helps to make a choice given a certain problem. In figure
+\ref{fig:tree}, the problem would be if it is possible to go play outside depending on the weather.
+
+\begin{figure}[h]
+    \centering
+    \begin{tikzpicture}
+        [
+            level 1/.style = {level distance = 2cm, sibling distance = 6cm},
+            level 2/.style = {sibling distance = 4cm}
+        ]
+        
+        \node {\bf Weather}
+            child {node {\bf Humidity}
+            child {node {\bf YES}
+            edge from parent node [left] {\it normal}}
+            child {node {\bf NO}
+            edge from parent node [right] {\it high}}
+            edge from parent node [left] {\it sunny}} 
+            child {node {\bf Wind}
+            child {node {\bf YES}
+            edge from parent node [left] {\it weak}}
+            child {node {\bf NO}
+            edge from parent node [right] {\it strong}}
+            edge from parent node [right] {\it rainy}};
+    \end{tikzpicture}
+    \caption{``\textit{Play outside}'' decision tree}
+    \label{fig:tree}
+\end{figure}
+
+\paragraph{} This decision tree is the result of the classification of the dataset in figure
+\ref{fig:dataweather}.
+
+\begin{figure}[h]
+    \centering
+    \begin{tabular}{||c c c c||} 
+    \hline
+    Weather & Humidity & Wind & Play\\[0.5ex]
+    \hline\hline
+    Sunny & High & Strong & NO\\ 
+    Sunny & Normal & Strong & YES\\
+    Rainy & High & Strong & NO\\
+    Rainy & High & Weak & YES\\ 
+    \hline
+    \end{tabular}
+    \caption{``\textit{Play outside}'' dataset}
+    \label{fig:dataweather}
+\end{figure}
+
+\paragraph{} According to this decision tree, if it is sunny and the humidity is normal, we can play outside.
+On the other hand, if there is rain and wind, we cannot play outside. Weather, humidity and wind are called
+features. This tree has two outcomes also called classes: YES and NO. On each node or decision node, the dataset
+is split into two subsets depending on a chosen feature. At the root, we split on the weather feature: each
+value of the dataset with $weather = sunny$ will be on the left subtree and each value of the dataset with
+$weather = rainy$ will be on the right subtree.
+
 \section{Classification concepts} %remove maybe?%
+\paragraph{} A decision tree can be built from a dataset, the root node represents the entire set, then it is
+divided into two more homogeneous sets creating two new decision nodes. We repeat this process recursively
+until a specified maximum depth or until the subset is considered \textbf{pure}.
+\paragraph{} The purify of a set can be defined with several metrics. A naïve way of defining it would be for
+example, in a set in which there is a gender feature composed of 70\% males and 30\% females, the purity of
+the set would be 70\%. We will introduce two methods used to find the purity of a set used in various algorithms.
+\begin{method}[Information gain]
+    The information gain uses the entropy in order to establish the purity of two subsets. If the information
+    gain is high, the two subsets are considered pure, on the contrary, low information gain means impure
+    subsets.
+    \begin{displaymath}
+        InformationGain(S) = H(S) - [H(S_1) + H(S_2)]
+    \end{displaymath}
+    \paragraph{} $S_1$ and $S_2$ are the two subsets resulting from spliting $S$. The entropy $H$ of a set $S$
+    with $J$ classes can be defined using the Shannon entropy where $p_i$ is the probability of the class $i$
+    to happen.
+    \begin{displaymath}
+        H(S) = - \sum_{i=1}^{J} p_i log_2 p_i
+    \end{displaymath}
+
+\paragraph{} This means that a set with a large entropy is not pure meanwhile a small entropy signifies a
+better purity. A set with an entropy of zero is pure i.e. only one class is remaining which also means this
+is a leaf in the decision tree. If a split is good, $S_1$ and $S_2$ will have a small entropy compared to the
+parent set $S$ thus the information gain will be high.
+\end{method}
+
+\begin{method}[Gini impurity]
+    An another way of computing the purity of set is using the Gini index. It measures the probability for a
+    random element of the set to be misclassified.
+    \begin{displaymath}
+        G(S) = 1 - \sum_{i=1}^{J} p_i^2
+    \end{displaymath}
+\paragraph{} A value of zero means that all instances of a set have the same class i.e. the set is pure.
+When spliting a set, we must do a weighted average of the Gini index for every subset. If this average is lower
+than the Gini index of the parent set, this means the split is good.
+\end{method}
+
+\paragraph{} Both these methods are viable and provide different results depending on the implementation but
+the choice of impurity measurement can have a significant impact. Other indicators exist such as variance 
+reduction or chi-square however, the algorithms we will consider mainly use information gain and gini index.
+
 \section{Multivariate decision trees}
+\paragraph{} ``A multivariate decision tree is a decision tree in which the condition tested at a node is a constraint on
+any number of features \cite{multivariate-explaining}.'' The principles of information gain, entropy and Gini
+impurity are still valid but, as we introduce another condition to test, finding the best split for each
+decision node becomes more costly to compute.
+
+\begin{figure}[h]
+    \centering
+    \begin{tikzpicture}
+        [
+            level 1/.style = {level distance = 2cm, sibling distance = 6cm},
+            level 2/.style = {sibling distance = 4cm}
+        ]
+        
+        \node {\bf Weather / Wind}
+            child {node {\bf Humidity}
+            child {node {\bf YES}
+            edge from parent node [left] {\it normal}}
+            child {node {\bf NO}
+            edge from parent node [right] {\it high}}
+            edge from parent node [left] {\it sunny $\lor$ strong}} 
+            child {node {\bf YES}
+            edge from parent node [right] {\it rainy $\land$ weak}};
+    \end{tikzpicture}
+    \caption{``\textit{Play outside}'' multivariate decision tree}
+    \label{fig:multitree}
+\end{figure}
+
+\paragraph{} This is a possible multivariate decision tree that classifies the dataset in figure \ref{fig:dataweather}.
+The root node test condition is on both the weather and wind features. The left child contains the subset
+satisfying the condition $(weather=sunny \lor wind=strong)$ and the right child contains the subset satisfying
+the negation i.e. $(weather=rainy \land wind=weak)$. It is important to note that the number of features a
+condition is testing do not have to be the same at every node.
 
 
 \chapter{State of the art}
@@ -173,8 +306,8 @@ too tedious to work with.
 
 \section{Preprocessing approach}
 \paragraph{} For the preprocessing approach, we made a simple python script to expand the features of a binary
-dataset. The script can add features of value $a \lor b$ for each possible combination of two distinct
-features a and b present in the inital dataset.\\
+dataset. The script can add new features of value $a \lor b$ for each possible combination of two distinct
+features a and b present in the inital dataset.
 
 \begin{example}
     For a dataset containing four features $a$, $b$, $c$ and $d$, the script will add the following six new
