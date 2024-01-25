@@ -4,7 +4,7 @@ from itertools import combinations
 
 
 class ExpandFeatures():
-    NUM_CNF = 4
+    NUM_CNF = 5
 
     def __init__(self, cnfs, file, new_file):
         self.cnfs = [cnf for cnf in map(int, str(cnfs))]
@@ -58,6 +58,10 @@ class ExpandFeatures():
                     line.append(int(x_or_noty))
                 
                 if self.cnfs[3] == 1:
+                    notx_or_noty = not line[f1] or not line[f2]
+                    line.append(int(notx_or_noty))
+                
+                if self.cnfs[4] == 1:
                     x_xor_y = line[f1] ^ line[f2]
                     line.append(int(x_xor_y))
         

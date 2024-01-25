@@ -13,7 +13,7 @@ For a binary dataset, **expandfeatures.py** can add features of value $a ∨ b$ 
 
 The number of new features added is $\binom{n}{2}$ where $n$ is the number of features in the initial dataset.
 
-The other supported cnfs are ($\neg x ∨ y$), ($x ∨ \neg y$) and ($x ⊕ y$). They can also be combined.
+The other supported cnfs are ($\neg x ∨ y$), ($x ∨ \neg y$), ($\neg x ∨ \neg y$) and ($x ⊕ y$). They can also be combined.
 
 ### Usage
 
@@ -25,6 +25,7 @@ Each digit of the first argument can be set to 1 or 0 (true or false). These dig
 - $x$ ∨ $y$
 - $\neg x$ ∨ $y$
 - $x$ ∨ $\neg y$
+- ($\neg x ∨ \neg y$)
 - $x$ ⊕ $y$
 
-So with 1001 as argument, the cnfs used will be ($x$ ∨ $y$) and ($x$ ⊕ $y$).
+So with 10001 as argument, the cnfs used will be ($x$ ∨ $y$) and ($x$ ⊕ $y$).
