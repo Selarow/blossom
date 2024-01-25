@@ -61,16 +61,16 @@
 
 \newpage
 \chapter*{Introduction}
-\paragraph{} This report is about the work achieved during the M2 Computer Science for Aerospace thesis.
-The supervisors are Mr. Martin Cooper at the \textit{Institut de Recherche en Informatique de Toulouse (IRIT)}
-and Mr. Emmanuel Hebrard at the \textit{Laboratoire d'Analyse et d'Architecture des Systèmes in Toulouse (LAAS)}.
-The goal of this master thesis is to implement a way for the decision tree classification algorithm called
-Blossom to support multivariate decision trees. In this report, we will first introduce useful notions
-related to this topic with a brief state of the art of decision tree classification. Afterwards, we will
-present what we have done so far and the results we have obtained. Finally we will overview what we are
-planning for the rest of the thesis.
-%a bit more infos ---> continuation of internship, more context for the actual work, talk about work of
-%Mr Cooper and Mr. Hebrard
+\paragraph{} This report is about the work achieved during the thesis in the second year of master in Computer
+Science for Aerospace. The supervisors are Mr. Martin Cooper at the \textit{Institut de Recherche en Informatique
+de Toulouse (IRIT)} and Mr. Emmanuel Hebrard at the \textit{Laboratoire d'Analyse et d'Architecture des Systèmes
+in Toulouse (LAAS)}. This is a direct continuation of our work done during the TER of summer 2023, in which we
+implemented our own version of a heuristic algorithm for multivariate decision tree classification. This time,
+we will work with an algorithm named Blossom which is an optimal decision tree classification algorithm created
+in part by Mr. Hebrard. The goal of this master thesis is to find a way for this algorithm to support
+multivariate decision trees. We will first introduce useful notions related to this topic with a brief state
+of the art on decision tree classification. Afterwards, we will present what we have done so far and some
+results we have obtained. Finally we will overview what we are planning for the rest of the thesis.
 
 
 \chapter{Preliminary research}
@@ -131,7 +131,7 @@ is split into two subsets depending on a chosen feature. At the root, we split o
 value of the dataset with $weather = sunny$ will be on the left subtree and each value of the dataset with
 $weather = rainy$ will be on the right subtree.
 
-\section{Classification concepts} %remove maybe?%
+\section{Classification concepts}
 \paragraph{} A decision tree can be built from a dataset, the root node represents the entire set, then it is
 divided into two more homogeneous sets creating two new decision nodes. We repeat this process recursively
 until a specified maximum depth or until the subset is considered \textbf{pure}.
@@ -171,7 +171,7 @@ than the Gini index of the parent set, this means the split is good.
 
 \paragraph{} Both these methods are viable and provide different results depending on the implementation but
 the choice of impurity measurement can have a significant impact. Other indicators exist such as variance 
-reduction or chi-square however, the algorithms we will consider mainly use information gain and gini index.
+reduction or chi-square however, the algorithms we will consider mainly use information gain and Gini index.
 
 \section{Multivariate decision trees}
 \paragraph{} ``A multivariate decision tree is a decision tree in which the condition tested at a node is a constraint on
@@ -209,26 +209,44 @@ condition is testing do not have to be the same at every node.
 
 
 \chapter{State of the art}
-\section{Decision tree learning} %use this part for explaining classification and talk about complexity here%
-\section{Heuristic algorithms} %update to add which purity measure each algo uses%
+\section{Decision tree learning} 
+\paragraph{} Decision tree learning is a supervised learning method used in machine learning. An optimal tree i.e.
+the tree with the best accuracy given a dataset is not easy to find using heuristic algorithms since this is
+a NP-hard problem. As a consequence, most heuristic algorithms use a greedy approach with sometimes pruning
+done to remove unecessary branches to achieve better accuracy.
+\paragraph{} A classical greedy approach iterates over every feature and for each feature is considered every
+value as a possible split, once the best split is found, the tree grows and it recursively continues.
+Such an approach has a time complexity at every decision node of $O(\sum_{i}^{}F_i)$ where $F_i$ is the number
+of distinct values for the feature $i$. The worst-case scenario being $O(mn)$ where $m$ is the number of
+features and $n$ is the number of instance in the set. In a multivariate decision tree, we introduce an
+additional condition to test at every node so the time complexity becomes $O(\sum_{i}\sum_{j}F_iF_j)$ which at
+worst is $O(m^2n^2)$.
+\paragraph{} The version of ID3 we implemented during our TER as well as the following heuristic methods have
+comparable worst-case time complexities in addition of not finding optimal trees.
+%complexity comparison table?%
+
+\newpage
+
+\section{Heuristic algorithms}
 \begin{algo}[ID3]
     Iterative Dichotomiser (1986) is a greedy algorithm developed by Ross Quilan that splits the dataset
-    using the information gain metric. This algorithm is the one we implemented in Python during our TER.\\
+    using the information gain metric. This algorithm is the one we implemented and adapted in Python during
+    our TER.\\
     $\mathcal{D}$ is the input dataset and $\mathcal{F}$ contains the features of a given set.
 
 \begin{algorithm}
     \caption{ID3}\label{alg:two}
     \DontPrintSemicolon
-    \KwData{$\mathcal{D}$}
+    \KwData{$\mathcal{D}$, $depth_{max}$}
     \SetKwFunction{BuildTree}{BuildTree}
     \SetKwFunction{BestSplit}{BestSplit}
 
     \SetKwProg{Bn}{Function}{:}{}
-    \Bn{\BuildTree{$S, depth_{max}$}}{
+    \Bn{\BuildTree{$S, depth=0$}}{
         \If{$depth \leq depth_{max}$}{
             $(left, right) \gets \BestSplit{S}$\;
-            $subtree_L \gets \BuildTree{left}$\;
-            $subtree_R \gets \BuildTree{right}$\;
+            $subtree_L \gets \BuildTree{left, depth+1}$\;
+            $subtree_R \gets \BuildTree{right, depth+1}$\;
             \KwRet $Node(subtree_L, subtree_R)$
         }
         \KwRet $Leaf(S)$\;
@@ -239,7 +257,7 @@ condition is testing do not have to be the same at every node.
         $IG \gets 0$
 
         \ForEach{$f \in \mathcal{F}$}{
-            $\mathcal{T} \gets thresholds()$
+            $\mathcal{T} \gets thresholds(f)$
 
             \ForEach{$t \in \mathcal{T}$}{
                 $(l, r) \gets split(S, t, f)$
@@ -258,7 +276,7 @@ condition is testing do not have to be the same at every node.
 \end{algorithm}
 
 \begin{itemize}
-    \item $thresholds()$ gives all the possible values of a feature $f$
+    \item $thresholds(f)$ gives all the possible values of a feature $f$
     \item $split(S, t, f)$ splits the dataset $S$ at the treshold value $t$ on the feature $f$
     \item $infogain(S, l, r)$ computes the information gain of the split, so the set $S=l+r$ 
 \end{itemize}
@@ -275,9 +293,9 @@ condition is testing do not have to be the same at every node.
 \begin{algo}[CART]
     Classification and Regression Trees, similarly to ID3 and C4.5 separates the data at each node on a given
     threshold and recursively iterates. It also supports continuous and discrete values. Unlike the algorithms
-    above, CART uses the gini impurity measure to split the dataset. Trees are grown to their maximal size
+    above, CART uses the Gini impurity measure to split the dataset. Trees are grown to their maximal size
     without stopping rules then, cost-complexity pruning is done which is a more advanced pruning technique
-    than the one from C4.5.
+    than the one used by C4.5.
 \end{algo}
 
 \section{Optimal algorithms}
@@ -292,7 +310,7 @@ condition is testing do not have to be the same at every node.
 
 
 \chapter{Actual work}
-\section{Objective and expected results}
+\section{Objective and expected results} %explain the structure of the datasets%
 \paragraph{} The objective of this master thesis is to adapt the Blossom algorithm to support multivariate
 decision trees. Since Blossom is an anytime algorithm, even with a very large dataset and many features,
 we can always expect a result compared to a traditional heuristic algorithm, thus Blossom seems particularly
@@ -301,8 +319,8 @@ input datset file (preprocessing approach) or change the algorithm code itself (
 Depending on the size of the dataset, we expect varying results. On a smaller dataset, given enough
 processing time, we expect to have optimal MDT's. However, on very large datasets, adding all the feature
 combinations will probably cause the algorithm to reach the maximum time chosen and interrupt the execution.
-It is important to note that the preprocessing apporach is not intended to be used on massive datasets as
-the number of added features will become too unreasonable, creating files serveral gigabytes in size,
+It is important to note that the preprocessing approach is not intended to be used on massive datasets as
+the number of added features will become too unreasonable, creating files several gigabytes in size,
 too tedious to work with. 
 
 \section{Preprocessing approach}
@@ -317,14 +335,14 @@ features a and b present in the inital dataset.
 
 \paragraph{} The number of new features added is $n \choose 2$ where $n$ is the number of features in
 the initial dataset. The other supported cnfs are $(\neg x \lor y)$, $(x \lor \neg y)$, $(\neg x \lor \neg y)$, 
-$(x \oplus y)$. The script allows to expand a dataset with the cnfs chosen or all of them. The expanded
+$(x \oplus y)$. The script allows to expand a dataset with any number of cnfs chosen. The expanded
 dataset is given in output and is directly ready to use with the Blossom algorithm. It is important to note
 we do not do extra preprocessing to verify if two features have the same values since Blossom already has
 some preprocessing steps, including feature reduction that would eliminate any unecessary or redundant feature.
 
 \section{Algorithmic approach}
 \paragraph{} This approach would involve rewriting entirely or partially Blossom. We are to work on this
-approach or find a different one on the second part of the master thesis.
+approach or find alternatives on the second part of the master thesis.
 
 
 \chapter{Analysis}
@@ -336,9 +354,9 @@ approach or find a different one on the second part of the master thesis.
 \chapter*{Conclusion}
 
 
+\nocite{*}
 \bibliographystyle{unsrt}
 \bibliography{references}
-\cite{multivariate-explaining} \cite{blossom} \cite{murtree} \cite{wiki-decision-tree}
 
 
 \end{document}
