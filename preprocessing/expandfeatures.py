@@ -1,4 +1,4 @@
-import sys
+import os, sys, psutil
 from itertools import combinations
 
 
@@ -31,17 +31,24 @@ class ExpandFeatures():
 
 
     def write_file(self, new_file, data):
+        print("\nWriting...")
         f = open(new_file, "a")
 
         for line in data:
             f.write(" ".join(map(str, line))+"\n")
         
         f.close()
+        print("Done")
+        file_size = "{:.2f}".format(os.stat(new_file).st_size/1024 ** 2)
+        print(f"New file: {new_file} of size {file_size} MB")
 
 
     def expand_features(self, data):
-        features = [i for i in range(len(data[0]))]
-        features = features[1:]
+        n, p = len(data), len(data[0])
+        process = psutil.Process()
+        features = [i for i in range(p)][1:]
+        print("Progress = 0%", end="")
+        cpt = 0
 
         for line in data:
             for f1, f2 in combinations(features, 2):
@@ -64,6 +71,10 @@ class ExpandFeatures():
                 if self.cnfs[4] == 1:
                     x_xor_y = line[f1] ^ line[f2]
                     line.append(int(x_xor_y))
+            
+            cpt+=1
+            mem = int(process.memory_info().rss/1024 ** 2)
+            print(f"\rProgress = {int((cpt/n)%100 * 100)}% | Using: {mem} MB", end="", flush=True)
         
         return data
 
