@@ -19,11 +19,13 @@ class ExpandFeatures():
 
 
     def parse_file(self, file):
-        data = []
+        data = dict()
         f = open(file, "r")
+        cnt = 0
 
         for line in f.readlines():
-            data.append([int(x) for x in line.split(" ")])
+            data[cnt] = [int(x) for x in line.split(" ")]
+            cnt+=1
         
         f.close()
 
@@ -31,11 +33,12 @@ class ExpandFeatures():
 
 
     def write_file(self, new_file, data):
-        print("\nWriting...")
+        print("\n")
         f = open(new_file, "a")
 
-        for line in data:
+        for i, line in data.items():
             f.write(" ".join(map(str, line))+"\n")
+            print(f"\rWriting...: {int(((i+1)/len(data))%100 * 100)}%", end=" ", flush=True)
         
         f.close()
         print("Done")
@@ -48,9 +51,8 @@ class ExpandFeatures():
         process = psutil.Process()
         features = [i for i in range(p)][1:]
         print("Progress = 0%", end="")
-        cpt = 0
 
-        for line in data:
+        for i, line in data.items():
             for f1, f2 in combinations(features, 2):
                 if self.cnfs[0] == 1:
                     x_or_y = line[f1] or line[f2]
@@ -72,9 +74,8 @@ class ExpandFeatures():
                     x_xor_y = line[f1] ^ line[f2]
                     line.append(int(x_xor_y))
             
-            cpt+=1
             mem = int(process.memory_info().rss/1024 ** 2)
-            print(f"\rProgress = {int((cpt/n)%100 * 100)}% | Using: {mem} MB", end="", flush=True)
+            print(f"\rProgress: {int(((i+1)/n)%100 * 100)}% | Mem usage: {mem} MB", end="", flush=True)
         
         return data
 
