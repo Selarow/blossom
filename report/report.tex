@@ -442,19 +442,56 @@ preprocessing and both the accuracy and test accuracy.
         \bf Average ex & & & \bf 0.9685 & \bf 0.9254 & \\
         \hline
     \end{tabular}
-    \caption{Test accuracy of \texttt{Blossom} with extended datasets for $seed=1$}
-    \label{fig:seedone}
+    \caption{Accuracy of \texttt{Blossom} with extended datasets for $seed=1$}
+    \label{fig:seed1}
 \end{table}
 
-\paragraph{} We can see in table \ref{fig:seedone} that overall, we get a better accuracy and test accuracy when using
+\paragraph{} We can see in table \ref{fig:seed1} that overall, we get a better accuracy and test accuracy when using
 an expanded dataset. Although during training the gain can be negligible, we get as much as a 7\% gain with some datasets 
-(\texttt{car-un} and \texttt{monk1-bin}) in testing accuracy. On average, the accuracy improves by around 2\% for this
-seed.
+(\texttt{car-un} and \texttt{monk1-bin}) in testing accuracy.
 
 \paragraph{} For most expanded datasets, the execution reaches its time limit and is interrupted, which means the search
 is not finished and it is still possible to find a more optimal tree. On the contrary, for the non-expanded datasets,
 the search found the optimal tree and thus the maximum accuracy possible. By expanding these datasets, we are now able to
 go past the original maximal accuracy given enough computing time.
+
+\begin{table}[ht]
+    \centering
+    \begin{tabular}{L{3.5cm} R{1.8cm} R{1.8cm}}
+        \hline
+        \bf dataset & \bf acc. & \bf test acc. \\
+        \hline
+        \tt anneal & 0.8905 & 0.8613 \\
+        \tt anneal ex & 0.9084 & 0.8711 \\
+        \tt car-un & 0.9222 & 0.8953 \\
+        \tt car-un ex & 0.9766 & 0.9716 \\
+        \tt diabetes & 0.8276 & 0.7454 \\
+        \tt diabetes ex & 0.8758 & 0.7727 \\
+        \tt ionosphere & 0.9885 & 0.8591 \\
+        \tt ionosphere ex & 0.9992 & 0.8816 \\
+        \tt iris-bin & 0.9932 & 0.9866 \\
+        \tt iris-bin ex & 0.9932 & 0.9933 \\
+        \tt lymph & 0.9931 & 0.8451 \\
+        \tt lymph ex & 1.0000 & 0.8258 \\
+        \tt monk1-bin & 0.9897 & 0.9538 \\
+        \tt monk1-bin ex & 1.0000 & 1.0000 \\
+        \tt mushroom & 1.0000 & 1.0000 \\
+        \tt mushroom ex & 1.0000 & 1.0000 \\
+        \hline
+        \bf Average & \bf 0.9506 & \bf 0.8933 \\
+        \hline
+        \bf Average ex & \bf 0.9691 & \bf 0.9145 \\
+        \hline
+    \end{tabular}
+    \caption{Average accuracies of \texttt{Blossom} with extended datasets for $seed=[1..5]$}
+    \label{fig:avgacc}
+\end{table}
+
+\paragraph{} Using all of our tesing for every seed, we averaged both the accuracies and test accuracies to get a rough idea
+of the performance of the extended datasets. On average, we get an increase of around 2\%. The accuracy tables for every
+seed can be found in the appendix.
+
+\newpage
 
 \paragraph{} Since the total execution time can be misleading, using the same parameters, we compared the first result
 of the search for each dataset. If the algorithm cannot find a first tree in less than one second, the result is
@@ -663,8 +700,175 @@ this report can be found on \href{https://github.com/Selarow/blossom}{GitHub}.
 All the test accuracy tables can be found below.\\
 \it Benchmarks done using Intel(R) Core(TM) i7-1165G7
 
+\begin{table}[ht]
+    \centering
+    \begin{tabular}{L{3.5cm} R{1.8cm} R{1.8cm} R{1.8cm} R{1.8cm} R{1.8cm}}
+        \hline
+        \multicolumn{6}{c}{$seed=1$ | $max depth=4$ | $test sample=.2$ | $time=900$} \\
+        \hline
+        \bf dataset & \bf features & \bf red. & \bf acc. & \bf test acc. & \bf cpu \\
+        \hline
+        \tt anneal & 93 & 44 & 0.8859 & 0.8834 & 1.162 \\
+        \tt anneal ex & 21483 & 18368 & 0.9013 & 0.8834 & 900 \\
+        \tt car-un & 21 & 0 & 0.9247 & 0.8901 & 0.166 \\
+        \tt car-un ex & 1071 & 126 & 0.9782 & 0.9653 & 900 \\
+        \tt diabetes & 112 & 56 & 0.8257 & 0.7662 & 5.271 \\
+        \tt diabetes ex & 31192 & 24212 & 0.8811 & 0.7727 & 900 \\
+        \tt ionosphere & 445 & 223 & 0.9857 & 0.9014 & 565.1 \\
+        \tt ionosphere ex & 494395 & 380485 & 0.9964 & 0.9436 & 900 \\
+        \tt iris-bin & 12 & 3 & 0.9916 & 1.0000 & 0 \\
+        \tt iris-bin ex & 342 & 235 & 0.9915 & 1.0000 & 0 \\
+        \tt lymph & 68 & 22 & 0.9914 & 0.8387 & 0.463 \\
+        \tt lymph ex & 11458 & 7947 & 1.0000 & 0.8387 & 900 \\
+        \tt monk1-bin & 11 & 0 & 1.0000 & 0.9230 & 0.004 \\
+        \tt monk1-bin ex & 286 & 24 & 1.0000 & 1.0000 & 1.078 \\
+        \tt mushroom & 119 & 19 & 1.0000 & 1.0000 & 42.92 \\
+        \tt mushroom ex & 35224 & 23765 & 1.0000 & 1.0000 & 900 \\
+        \hline
+        \bf Average & & & \bf 0.9506 & \bf 0.9003 & \\
+        \hline
+        \bf Average ex & & & \bf 0.9685 & \bf 0.9254 & \\
+        \hline
+    \end{tabular}
+    \caption{Accuracy of \texttt{Blossom} with extended datasets for $seed=1$}
+    \label{fig:seed1bis}
+\end{table}
 
+\begin{table}[ht]
+    \centering
+    \begin{tabular}{L{3.5cm} R{1.8cm} R{1.8cm} R{1.8cm} R{1.8cm} R{1.8cm}}
+        \hline
+        \multicolumn{6}{c}{$seed=2$ | $max depth=4$ | $test sample=.2$ | $time=900$} \\
+        \hline
+        \bf dataset & \bf features & \bf red. & \bf acc. & \bf test acc. & \bf cpu \\
+        \hline
+        \tt anneal & 93 & 45 & 0.8890 & 0.8711 & 1.089 \\
+        \tt anneal ex & 21483 & 18438 &	0.9075 & 0.8957 & 900 \\
+        \tt car-un & 21 & 0 & 0.9204 & 0.9248 & 0.168 \\
+        \tt car-un ex & 1071 & 126 & 0.9761 & 0.9739 & 900 \\
+        \tt diabetes & 112 & 56 & 0.8273 & 0.7272 & 5.508 \\
+        \tt diabetes ex & 31192 & 24208 & 0.8680 & 0.8051 & 900 \\
+        \tt ionosphere & 445 & 223 & 0.9892 & 0.8169 & 541 \\
+        \tt ionosphere ex & 494395 & 380491 & 1.0000 & 0.8309 & 900 \\
+        \tt iris-bin & 12 & 2 & 0.9916 & 1.0000 & 0 \\
+        \tt iris-bin ex & 342 & 225 & 0.9915 & 1.0000 & 0 \\
+        \tt lymph & 68 & 22 & 1.0000 & 0.8709 & 0.595 \\
+        \tt lymph ex & 11458 & 8001 & 1.0000 & 0.7419 & 900 \\
+        \tt monk1-bin & 11 & 0 & 0.9897 & 0.9230 & 0.004 \\
+        \tt monk1-bin ex & 286 & 24 & 1.0000 & 1.0000 & 1.132 \\ 
+        \tt mushroom & 119 & 19 & 1.0000 & 1.0000 & 44.05 \\
+        \tt mushroom ex & 35224 & 23771 & 1.0000 & 1.0000 & 900 \\
+        \hline
+        \bf Average & & & \bf 0.9509 & \bf 0.8917 & \\
+        \hline
+        \bf Average ex & & & \bf 0.9678 & \bf 0.9059 & \\
+        \hline
+    \end{tabular}
+    \caption{Accuracy of \texttt{Blossom} with extended datasets for $seed=2$}
+    \label{fig:seed2}
+\end{table}
 
+\begin{table}[ht]
+    \centering
+    \begin{tabular}{L{3.5cm} R{1.8cm} R{1.8cm} R{1.8cm} R{1.8cm} R{1.8cm}}
+        \hline
+        \multicolumn{6}{c}{$seed=3$ | $max depth=4$ | $test sample=.2$ | $time=900$} \\
+        \hline
+        \bf dataset & \bf features & \bf red. & \bf acc. & \bf test acc. & \bf cpu \\
+        \hline
+        \tt anneal & 93 & 45 & 0.8890 & 0.8466 & 1.105 \\
+        \tt anneal ex & 21483 & 18428 & 0.9060 & 0.8588 & 900 \\
+        \tt car-un & 21 & 0 & 0.9204 & 0.8901 & 0.17 \\
+        \tt car-un ex & 1071 & 126 & 0.9753 & 0.9768 & 900 \\
+        \tt diabetes & 112 & 56 & 0.8241 & 0.7532 & 5.208 \\
+        \tt diabetes ex & 31192 & 24216 & 0.8729 & 0.7857 & 900 \\
+        \tt ionosphere & 445 & 223 & 0.9857 & 0.9014 & 543.9 \\
+        \tt ionosphere ex & 494395 & 380399 & 1.0000 & 0.8873 & 900 \\
+        \tt iris-bin & 12 & 2 & 0.9916 & 0.9666 & 0 \\
+        \tt iris-bin ex & 342 & 231 & 0.9915 & 1.0000 & 0 \\
+        \tt lymph & 68 & 21 & 0.9914 & 0.8387 & 0.468 \\
+        \tt lymph ex & 11458 & 7906 & 1.0000 & 0.8387 & 900 \\
+        \tt monk1-bin & 11 & 0 & 0.9897 & 0.9615 & 0.003 \\
+        \tt monk1-bin ex & 286 & 24 & 1.0000 & 1.0000 & 1.123 \\
+        \tt mushroom & 119 & 19 & 1.0000 & 1.0000 & 42.34 \\
+        \tt mushroom ex & 35224 & 23771 & 1.0000 & 1.0000 & 900 \\
+        \hline
+        \bf Average & & & \bf 0.9489 & \bf 0.8947 & \\
+        \hline
+        \bf Average ex & & & \bf 0.9682 & \bf 0.9184 & \\
+        \hline
+    \end{tabular}
+    \caption{Accuracy of \texttt{Blossom} with extended datasets for $seed=3$}
+    \label{fig:seed3}
+\end{table}
+
+\begin{table}[ht]
+    \centering
+    \begin{tabular}{L{3.5cm} R{1.8cm} R{1.8cm} R{1.8cm} R{1.8cm} R{1.8cm}}
+        \hline
+        \multicolumn{6}{c}{$seed=4$ | $max depth=4$ | $test sample=.2$ | $time=900$} \\
+        \hline
+        \bf dataset & \bf features & \bf red. & \bf acc. & \bf test acc. & \bf cpu \\
+        \hline
+        \tt anneal & 93 & 44 & 0.8952 &	0.8527 & 1.153 \\
+        \tt anneal ex & 21483 &	18354 &	0.9121 & 0.8773 & 900 \\
+        \tt car-un & 21 & 0 & 0.9218 & 0.8786 & 0.171 \\
+        \tt car-un ex & 1071 & 126 & 0.9768 & 0.9710 & 900 \\
+        \tt diabetes & 112 & 56 & 0.8338 & 0.7337 & 5.311 \\
+        \tt diabetes ex & 31192 & 24204 & 0.8762 & 0.7597 & 900 \\
+        \tt ionosphere & 445 & 223 & 0.9892 & 0.8450 & 531.2 \\
+        \tt ionosphere ex & 494395 & 380881 & 1.0000 & 0.8873 & 900 \\
+        \tt iris-bin & 12 &	2 &	1.0000 & 0.9666 & 0 \\
+        \tt iris-bin ex & 342 &	225 & 1.0000 & 0.9666 & 0 \\
+        \tt lymph & 68 & 23 & 0.9914 & 0.7741 & 0.418 \\
+        \tt lymph ex & 11458 & 8097	& 1.0000 & 0.8387 & 900 \\
+        \tt monk1-bin & 11 & 0 & 0.9897 & 0.9615 & 0.001 \\
+        \tt monk1-bin ex & 286 & 24 & 1.0000 & 1.0000 & 1.121 \\
+        \tt mushroom & 119 & 19 & 1.0000 & 1.0000 & 42.74 \\
+        \tt mushroom ex & 35224 & 23759	& 1.0000 & 1.0000 & 900 \\
+        \hline
+        \bf Average & & & \bf 0.9526 & \bf 0.8765 & \\
+        \hline
+        \bf Average ex & & & \bf 0.9706 & \bf 0.9126 & \\
+        \hline
+    \end{tabular}
+    \caption{Accuracy of \texttt{Blossom} with extended datasets for $seed=4$}
+    \label{fig:seed4}
+\end{table}
+
+\begin{table}[ht]
+    \centering
+    \begin{tabular}{L{3.5cm} R{1.8cm} R{1.8cm} R{1.8cm} R{1.8cm} R{1.8cm}}
+        \hline
+        \multicolumn{6}{c}{$seed=5$ | $max depth=4$ | $test sample=.2$ | $time=900$} \\
+        \hline
+        \bf dataset & \bf features & \bf red. & \bf acc. & \bf test acc. & \bf cpu \\
+        \hline
+        \tt anneal & 93 & 45 & 0.8936 &	0.8527 & 1.127 \\
+        \tt anneal ex & 21483 &	18392 &	0.9152 & 0.8404 & 900 \\
+        \tt car-un & 21 & 0	& 0.9240 & 0.8930 &	0.166 \\
+        \tt car-un ex & 1071 & 126 & 0.9768 & 0.9710 & 900 \\
+        \tt diabetes & 112 & 56 & 0.8273 & 0.7467 & 5.332 \\
+        \tt diabetes ex & 31192 & 24209 & 0.8811 & 0.7402 & 900 \\
+        \tt ionosphere & 445 & 223 & 0.9928 & 0.8309 & 489 \\
+        \tt ionosphere ex & 494395 & 380485	& 1.0000 & 0.8591 &	900 \\
+        \tt iris-bin & 12 &	3 &	0.9916 & 1.0000	& 0 \\
+        \tt iris-bin ex & 342 &	235 & 0.9915 & 1.0000 & 0 \\
+        \tt lymph & 68 & 22 & 0.9914 & 0.9032 & 0.464 \\
+        \tt lymph ex & 11458 & 7868	& 1.0000 & 0.8709 & 900 \\
+        \tt monk1-bin & 11 & 0 & 0.9795 & 1.0000 & 0.004 \\
+        \tt monk1-bin ex & 286 & 24	& 1.0000 & 1.0000 & 1.104 \\
+        \tt mushroom & 119 & 19	& 1.0000 & 1.0000 &	42.29 \\
+        \tt mushroom ex & 35224 & 23795 & 1.0000 & 1.0000 &	900 \\
+        \hline
+        \bf Average & & & \bf 0.9500 & \bf 0.9033 & \\
+        \hline
+        \bf Average ex & & & \bf 0.9705 & \bf 0.9102 & \\
+        \hline
+    \end{tabular}
+    \caption{Accuracy of \texttt{Blossom} with extended datasets for $seed=5$}
+    \label{fig:seed5}
+\end{table}
 
 
 
