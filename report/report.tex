@@ -151,7 +151,7 @@ $weather = rainy$ will be on the right subtree.
 divided into two more homogeneous sets creating two new decision nodes. We repeat this process recursively
 until a specified maximum depth or until the subset is considered \textbf{pure}.
 
-\paragraph{} The purify of a set can be defined with several metrics. A naïve way of defining it would be for
+\paragraph{} The purity of a set can be defined with several metrics. A naïve way of defining it would be for
 example, in a set in which there is a gender feature composed of 70\% males and 30\% females, the purity of
 the set would be 70\%. We will introduce two methods used to find the purity of a set used in various algorithms.
 
@@ -162,7 +162,7 @@ the set would be 70\%. We will introduce two methods used to find the purity of 
     \begin{displaymath}
         InformationGain(S) = H(S) - [H(S_1) + H(S_2)]
     \end{displaymath}
-    \paragraph{} $S_1$ and $S_2$ are the two subsets resulting from spliting $S$. The entropy $H$ of a set $S$
+    \paragraph{} $S_1$ and $S_2$ are the two subsets resulting from splitting $S$. The entropy $H$ of a set $S$
     with $J$ classes can be defined using the Shannon entropy where $p_i$ is the probability of the class $i$
     to happen.
     \begin{displaymath}
@@ -181,8 +181,8 @@ the set would be 70\%. We will introduce two methods used to find the purity of 
         G(S) = 1 - \sum_{i=1}^{J} p_i^2
     \end{displaymath}
     \paragraph{} A value of zero means that all instances of a set have the same class i.e. the set is pure.
-    When spliting a set, we must do a weighted average of the Gini index for every subset. If this average is lower
-    than the Gini index of the parent set, this means the split is good.
+    When splitting a set, we must do a weighted average of the Gini index for every subset. If this average is
+    lower than the Gini index of the parent set, this means the split is good.
 \end{method}
 
 \paragraph{} Both these methods are viable and provide different results depending on the implementation but
@@ -222,7 +222,7 @@ split for each decision node becomes more costly to compute.
 The root node test condition is on both the weather and wind features. The left child contains the subset
 satisfying the condition $(weather=sunny \lor wind=strong)$ and the right child contains the subset satisfying
 the negation i.e. $(weather=rainy \land wind=weak)$. It is important to note that the number of features a
-condition is testing do not have to be the same at every node.
+condition is testing does not have to be the same at every node.
 
 
 
@@ -231,13 +231,13 @@ condition is testing do not have to be the same at every node.
 \paragraph{} Decision tree learning is a supervised learning method used in machine learning. An optimal tree i.e.
 the tree with the best accuracy given a dataset is not easy to find using heuristic algorithms since this is
 a NP-hard problem. As a consequence, most heuristic algorithms use a greedy approach with sometimes pruning
-done to remove unecessary branches to achieve better accuracy.
+done to remove unnecessary branches to achieve better accuracy.
 
 \paragraph{} A classical greedy approach iterates over every feature and for each feature is considered every
 value as a possible split, once the best split is found, the tree grows and it recursively continues.
 Such an approach has a time complexity at every decision node of $O(\sum_{i}^{}F_i)$ where $F_i$ is the number
 of distinct values for the feature $i$. The worst-case scenario being $O(mn)$ where $m$ is the number of
-features and $n$ is the number of instance in the set. In a multivariate decision tree, we introduce an
+features and $n$ is the number of instances in the set. In a multivariate decision tree, we introduce an
 additional condition to test at every node so the time complexity becomes $O(\sum_{i}\sum_{j}F_iF_j)$ which at
 worst is $O(m^2n^2)$.
 
@@ -297,7 +297,7 @@ comparable worst-case time complexities in addition of not finding optimal trees
 
     \begin{itemize}
         \item $thresholds(f)$ gives all the possible values of a feature $f$
-        \item $split(S, t, f)$ splits the dataset $S$ at the treshold value $t$ on the feature $f$
+        \item $split(S, t, f)$ splits the dataset $S$ at the threshold value $t$ on the feature $f$
         \item $infogain(S, l, r)$ computes the information gain of the split, so the set $S=l+r$ 
     \end{itemize}
 \end{algo}
@@ -305,7 +305,7 @@ comparable worst-case time complexities in addition of not finding optimal trees
 \begin{algo}[\texttt{C4.5}]
     Developed in 1993 by Ross Quilan, it is the successor of \texttt{ID3} and works the same way. It is an extension
     of \texttt{ID3} offering several improvements. This version can handle both continuous and discrete values.
-    Some post processing is added called pruning: it eliminates branches that do not provide additional
+    Some post-processing is done called pruning: it eliminates branches that do not provide additional
     information. Further versions of this algorithm have been made mainly for performance improvements but
     the core principle stays the same.
 \end{algo}
@@ -324,8 +324,8 @@ comparable worst-case time complexities in addition of not finding optimal trees
 over them briefly only presenting the differences with heuristic methods.}
 
 \begin{algo}[\texttt{MurTree\cite{murtree}}]
-    \texttt{DL8} and \texttt{DL8.5} are two alogirithms seen as the starting point of the work done during the
-    developpement of \texttt{MurTree}. Since features with many possible values are computationnaly very expensive
+    \texttt{DL8} and \texttt{DL8.5} are two algorithms seen as the starting point of the work done during the
+    development of \texttt{MurTree}. Since features with many possible values are computationally very expensive
     for classification algorithms, this algorithm only takes binary datasets. The features with continuous or categorical
     features are binarised as a preprocessing step. The approach used is dynamic programming. The idea is to divide the
     problem into subproblems, as we resolve subproblems, we keep the results so we reduce the amount of re-computing
@@ -336,9 +336,9 @@ over them briefly only presenting the differences with heuristic methods.}
         \item The classification result is not changed by the order in which the features are encountered.
     \end{enumerate}
 
-    \paragraph{} Once the dataset has been split, both sibling subtrees can be optimised independently because of (i).
+    \paragraph{} Once the dataset has been split, both sibling subtrees can be optimized independently because of (i).
     We can take advantage of (ii) when two datasets share the same features by storing results already computed (caching).
-    This approach incentivize optimizing a subtree before moving to the others.
+    This approach incentivizes optimizing a subtree before moving to the others.
 \end {algo}
 
 \begin{algo}[\texttt{Blossom\cite{blossom}}]
@@ -359,20 +359,19 @@ over them briefly only presenting the differences with heuristic methods.}
 \paragraph{} The objective of this master thesis is to adapt the \texttt{Blossom} algorithm to support multivariate
 decision trees. Since \texttt{Blossom} is an anytime algorithm, even with a very large dataset and many features,
 we can always expect a result compared to a traditional heuristic algorithm, thus \texttt{Blossom} seems particularly
-adapted for experimenting on MDT's. To achieve this, we have thought about several approaches: modify the
-input datset file (preprocessing approach) or change the algorithm code itself (algorithmic approach).
-Depending on the size of the dataset, we expect varying results. On a smaller dataset, given enough
-processing time, we expect to have optimal MDT's. However, on very large datasets, adding all the feature
-combinations will probably cause the algorithm to reach the maximum time chosen and interrupt the execution.
-It is important to note that the preprocessing approach is not intended to be used on massive datasets as
-the number of added features will become too unreasonable, creating files several gigabytes in size,
-too tedious to work with. 
+adapted. To achieve this, we have thought about several approaches: modify the input dataset file (preprocessing approach)
+or change the algorithm code itself (algorithmic approach). Depending on the size of the dataset, we expect varying results.
+On a smaller dataset, given enough processing time, we expect to have optimal multivariate decision trees. However, on very
+large datasets, adding all the feature combinations will probably cause the algorithm to reach the maximum time chosen and
+interrupt the execution. It is important to note that the preprocessing approach is not intended to be used on massive
+datasets as the number of added features will become too unreasonable, creating files several gigabytes in size, too
+tedious to work with.
 
 
 \section{Preprocessing approach}
 \paragraph{} For the preprocessing approach, we made a simple python script to expand the features of a binary
 dataset. The script can add new features of value $a \lor b$ for each possible combination of two distinct
-features a and b present in the inital dataset.
+features a and b present in the initial dataset.
 
 \begin{example}
     For a dataset containing four features $a$, $b$, $c$ and $d$, the script will add the following six new
@@ -384,8 +383,8 @@ the initial dataset and $k$ is the number of cnfs used. The other supported cnfs
 $(x \lor \neg y)$, $(\neg x \lor \neg y)$, $(x \oplus y)$. The script allows to expand a dataset with any number
 of cnfs chosen. The expanded dataset is given in output and is directly ready to use with the \texttt{Blossom} algorithm.
 It is important to note we do not do extra preprocessing to verify if two features have the same values since
-\texttt{Blossom} already has some preprocessing steps, including feature reduction that would eliminate any unecessary or
-redundant feature.
+\texttt{Blossom} already has some preprocessing steps, including feature reduction that would eliminate any unnecessary or
+redundant features.
 
 
 \section{Other approaches}
@@ -396,9 +395,9 @@ this language, we decided to start with the preprocessing approach as a proof of
 \paragraph{} In the second part of the master thesis we have a few possibilities:
 
 \begin{enumerate}[(i)]
-    \item Further improve our preprocessing algorithm to try and eliminate unecessary features to support bigger
+    \item Further improve our preprocessing algorithm to try and eliminate unnecessary features to support bigger
     datasets.
-    \item Find an abductive explanation \cite{multivariate-explaining} of the output multivariate decison trees
+    \item Find an abductive explanation \cite{multivariate-explaining} of the output multivariate decision trees
     from \texttt{Blossom} in order to obtain the same decisions with smaller trees.
 \end{enumerate}
 
@@ -487,7 +486,7 @@ go past the original maximal accuracy given enough computing time.
     \label{fig:avgacc}
 \end{table}
 
-\paragraph{} Using all of our tesing for every seed, we averaged both the accuracies and test accuracies to get a rough idea
+\paragraph{} Using all of our testing for every seed, we averaged both the accuracies and test accuracies to get a rough idea
 of the performance of the extended datasets. On average, we get an increase of around 2\%. The accuracy tables for every
 seed can be found in the appendix.
 
@@ -639,7 +638,7 @@ using the \texttt{anneal} dataset.
             \end{axis}
         \end{tikzpicture}
     \end{center}
-    \caption{\texttt{anneal} vs \texttt{anneal ex} performance}
+    \caption{\texttt{anneal} vs \texttt{anneal ex} performance using \texttt{Blossom}}
     \label{fig:annealperf}
 \end{figure}
 
@@ -676,7 +675,7 @@ different depths and longer execution times.
 \paragraph{} In a nutshell, we went over the basics of decision and multivariate decision trees, explaining some core
 principles and important classification algorithms in a brief state of the art. Our work so far lead us to develop
 a Python script taking any binary dataset and expanding it with new features that are conjunctions of the original
-features. We tested this additionnal preprocessing step using the \texttt{Blossom} optimal decision tree classification
+features. We tested this additional preprocessing step using the \texttt{Blossom} optimal decision tree classification
 algorithm and obtained multivariate decision trees with slightly better accuracies than their univariate counterparts.
 Even though this is a minor improvement, equivalent accuracies to those found with untouched datasets are found earlier
 in the research. Finally, we identified several refinements to make to our script and testing methodology as well as
@@ -692,7 +691,7 @@ new possible leads to follow during the second part of the master thesis.
 
 \appendix
 \chapter*{Appendix}
-The code of our expansion script, the traces of the \texttt{Blossom} alogorithm for our tests as well as the code for
+The code of our expansion script, the traces of the \texttt{Blossom} algorithm for our tests as well as the code for
 this report can be found on \href{https://github.com/Selarow/blossom}{GitHub}.
 
 
