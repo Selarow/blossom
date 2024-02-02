@@ -1,0 +1,15 @@
+d readtime=0.003375
+d sorttime=3.2e-05
+d duplicate=0 suppressed=0 ratio=0 count=117 negative=53 positive=64 final_count=117
+d preprocesstime=6.8e-05
+d inputtime=0.003709
+d feature=68 feature_reduction=21
+--------------------------------------[search]--------------------------------------
+d accuracy=0.9658 error=4    depth=4   size=27  choices=8         mem=21  time=0
+d accuracy=0.9743 error=3    depth=4   size=27  choices=10        mem=23  time=0
+d accuracy=0.9829 error=2    depth=4   size=29  choices=24        mem=25  time=0
+d accuracy=0.9914 error=1    depth=4   size=29  choices=90        mem=28  time=0
+-------------------------------------[optimal]--------------------------------------
+d accuracy=0.9914 error=1    depth=4   size=29  choices=171311    mem=51  time=0.468
+p solution verified (1 / 1)
+d test_error=5 test_accuracy=0.8387097

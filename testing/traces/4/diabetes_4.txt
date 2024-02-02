@@ -1,0 +1,30 @@
+d readtime=0.004771
+d sorttime=0.00017
+d duplicate=0 suppressed=0 ratio=0 count=614 negative=214 positive=400 final_count=614
+d preprocesstime=0.000244
+d inputtime=0.006181
+d feature=112 feature_reduction=56
+--------------------------------------[search]--------------------------------------
+d accuracy=0.7866 error=131  depth=4   size=29  choices=8         mem=23  time=0
+d accuracy=0.7915 error=128  depth=4   size=29  choices=10        mem=26  time=0
+d accuracy=0.7931 error=127  depth=4   size=29  choices=22        mem=26  time=0
+d accuracy=0.7996 error=123  depth=4   size=31  choices=116       mem=28  time=0.001
+d accuracy=0.8013 error=122  depth=4   size=31  choices=232       mem=29  time=0.002
+d accuracy=0.8078 error=118  depth=4   size=31  choices=290       mem=30  time=0.002
+d accuracy=0.8094 error=117  depth=4   size=31  choices=644       mem=38  time=0.007
+d accuracy=0.811  error=116  depth=4   size=31  choices=704       mem=38  time=0.007
+d accuracy=0.8127 error=115  depth=4   size=31  choices=724       mem=38  time=0.007
+d accuracy=0.8143 error=114  depth=4   size=31  choices=784       mem=38  time=0.008
+d accuracy=0.8159 error=113  depth=4   size=31  choices=1730      mem=38  time=0.017
+d accuracy=0.8175 error=112  depth=4   size=31  choices=10611     mem=38  time=0.083
+d accuracy=0.8208 error=110  depth=4   size=31  choices=19981     mem=53  time=0.127
+d accuracy=0.8224 error=109  depth=4   size=31  choices=20037     mem=53  time=0.127
+d accuracy=0.8241 error=108  depth=4   size=31  choices=21629     mem=53  time=0.137
+d accuracy=0.8257 error=107  depth=4   size=31  choices=28898     mem=53  time=0.184
+d accuracy=0.8273 error=106  depth=4   size=31  choices=34860     mem=54  time=0.216
+d accuracy=0.8306 error=104  depth=4   size=31  choices=128337    mem=54  time=0.77
+d accuracy=0.8338 error=102  depth=4   size=31  choices=185419    mem=54  time=1.092
+-------------------------------------[optimal]--------------------------------------
+d accuracy=0.8338 error=102  depth=4   size=31  choices=936624    mem=54  time=5.311
+p solution verified (102 / 102)
+d test_error=41 test_accuracy=0.7337662

@@ -1,0 +1,27 @@
+d readtime=0.172434
+d sorttime=0.000354
+d duplicate=0 suppressed=0 ratio=0 count=614 negative=214 positive=400 final_count=614
+d preprocesstime=0.00047
+d inputtime=0.22479
+d feature=31192 feature_reduction=24216
+--------------------------------------[search]--------------------------------------
+d accuracy=0.8403 error=98   depth=4   size=31  choices=8         mem=25  time=0.302
+d accuracy=0.8469 error=94   depth=4   size=31  choices=10        mem=28  time=0.305
+d accuracy=0.8501 error=92   depth=4   size=31  choices=24        mem=28  time=0.322
+d accuracy=0.8534 error=90   depth=4   size=31  choices=384       mem=28  time=0.729
+d accuracy=0.855  error=89   depth=4   size=31  choices=12688     mem=29  time=13.45
+d accuracy=0.8566 error=88   depth=4   size=31  choices=12742     mem=29  time=13.46
+d accuracy=0.8583 error=87   depth=4   size=31  choices=12916     mem=29  time=13.58
+d accuracy=0.8599 error=86   depth=4   size=31  choices=24882     mem=30  time=21.74
+d accuracy=0.8615 error=85   depth=4   size=31  choices=24888     mem=30  time=21.75
+d accuracy=0.8631 error=84   depth=4   size=31  choices=24896     mem=30  time=21.76
+d accuracy=0.8648 error=83   depth=4   size=31  choices=38734     mem=31  time=41.52
+d accuracy=0.8664 error=82   depth=4   size=31  choices=38876     mem=31  time=41.63
+d accuracy=0.868  error=81   depth=4   size=31  choices=39304     mem=31  time=41.99
+d accuracy=0.8697 error=80   depth=4   size=31  choices=144640    mem=38  time=170.5
+d accuracy=0.8713 error=79   depth=4   size=31  choices=152400    mem=38  time=178.3
+d accuracy=0.8729 error=78   depth=4   size=31  choices=281798    mem=38  time=343.5
+-----------------------------------[interrupted]------------------------------------
+d accuracy=0.8729 error=78   depth=4   size=31  choices=723000    mem=38  time=900.2
+p solution verified (78 / 78)
+d test_error=33 test_accuracy=0.7857143

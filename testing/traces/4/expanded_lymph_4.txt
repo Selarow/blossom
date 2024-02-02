@@ -1,0 +1,13 @@
+d readtime=0.016318
+d sorttime=3.7e-05
+d duplicate=0 suppressed=0 ratio=0 count=117 negative=53 positive=64 final_count=117
+d preprocesstime=6.1e-05
+d inputtime=0.020784
+d feature=11458 feature_reduction=8097
+--------------------------------------[search]--------------------------------------
+d accuracy=1      error=0    depth=4   size=15  choices=5         mem=12  time=0.062
+d accuracy=1      error=0    depth=4   size=13  choices=11683     mem=26  time=2.099
+-----------------------------------[interrupted]------------------------------------
+d accuracy=1      error=0    depth=4   size=13  choices=4080000   mem=27  time=900.2
+p solution verified (0 / 0)
+d test_error=5 test_accuracy=0.8387097

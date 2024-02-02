@@ -10,6 +10,7 @@
 \usepackage{multibib}
 \usepackage{hyperref}
 \usepackage{pgfplots}
+\usepackage{enumerate}
 \usepackage{algorithm2e}
 
 \hypersetup{colorlinks=true, citecolor=black, linkcolor=black, urlcolor=blue}
@@ -256,13 +257,13 @@ comparable worst-case time complexities in addition of not finding optimal trees
     \begin{algorithm}
         \caption{\texttt{ID3}}\label{alg:two}
         \DontPrintSemicolon
-        \KwData{$\mathcal{D}$, $depth_{max}$}
+        \KwData{$\mathcal{D}$, $maxdepth$}
         \SetKwFunction{BuildTree}{BuildTree}
         \SetKwFunction{BestSplit}{BestSplit}
 
         \SetKwProg{Bn}{Function}{:}{}
         \Bn{\BuildTree{$S, depth=0$}}{
-            \If{$depth \leq depth_{max}$}{
+            \If{$depth \leq maxdepth$}{
                 $(left, right) \gets \BestSplit{S}$\;
                 $subtree_L \gets \BuildTree{left, depth+1}$\;
                 $subtree_R \gets \BuildTree{right, depth+1}$\;
@@ -319,13 +320,36 @@ comparable worst-case time complexities in addition of not finding optimal trees
 
 
 \section{Optimal algorithms}
-\begin{algo}[\texttt{DL8}]
+\paragraph{} \textit{Although the core principles remain simple, these algorithms are much more complex so we will go
+over them briefly only presenting the differences with heuristic methods.}
+
+\begin{algo}[\texttt{MurTree\cite{murtree}}]
+    \texttt{DL8} and \texttt{DL8.5} are two alogirithms seen as the starting point of the work done during the
+    developpement of \texttt{MurTree}. Since features with many possible values are computationnaly very expensive
+    for classification algorithms, this algorithm only takes binary datasets. The features with continuous or categorical
+    features are binarised as a preprocessing step. The approach used is dynamic programming. The idea is to divide the
+    problem into subproblems, as we resolve subproblems, we keep the results so we reduce the amount of re-computing
+    needed and thus the time complexity. \texttt{MurTree} takes advantage of two properties of decision trees. 
+    
+    \begin{enumerate}[(i)]
+        \item The set at any decision node is the union of the sets of its children.
+        \item The classification result is not changed by the order in which the features are encountered.
+    \end{enumerate}
+
+    \paragraph{} Once the dataset has been split, both sibling subtrees can be optimised independently because of (i).
+    We can take advantage of (ii) when two datasets share the same features by storing results already computed (caching).
+    This approach incentivize optimizing a subtree before moving to the others.
 \end {algo}
 
-\begin{algo}[\texttt{MurTree}]
-\end {algo}
+\begin{algo}[\texttt{Blossom\cite{blossom}}]
+    Similarly to \texttt{MurTree}, the \texttt{Blossom} algorithm uses binary datasets and dynamic programming to find
+    optimal decision trees. A significant difference is that before optimizing branches, \texttt{Blossom} always expands
+    branches that did not reach the maximum depth called non-terminal branches or ``blossoms''. This is also an anytime
+    algorithm; it can return a decision tree when interrupted before it ends, as it keeps running, better solutions will
+    be found. \texttt{Blossom} performs better than other state of the art algorithms, especially on deeper trees.
+    Another particularity of this algorithm is the feature reduction applied during preprocessing that will be greatly
+    effective when applied to multivariate decision trees.
 
-\begin{algo}[\texttt{Blossom}]
 \end {algo}
 
 
@@ -371,12 +395,12 @@ this language, we decided to start with the preprocessing approach as a proof of
 
 \paragraph{} In the second part of the master thesis we have a few possibilities:
 
-\begin{itemize}
-    \item further improve our preprocessing algorithm to try and eliminate unecessary features to support bigger
-    datasets
-    \item find the abductive explanation \cite{multivariate-explaining} of the output multivariate decison trees
-    from \texttt{Blossom} in order to obtain the same decisions with smaller trees
-\end{itemize}
+\begin{enumerate}[(i)]
+    \item Further improve our preprocessing algorithm to try and eliminate unecessary features to support bigger
+    datasets.
+    \item Find an abductive explanation \cite{multivariate-explaining} of the output multivariate decison trees
+    from \texttt{Blossom} in order to obtain the same decisions with smaller trees.
+\end{enumerate}
 
 
 

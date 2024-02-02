@@ -1,0 +1,14 @@
+d readtime=0
+d sorttime=0
+d duplicate=0 suppressed=0 ratio=0 count=98 negative=49 positive=49 final_count=98
+d preprocesstime=0
+d inputtime=0
+d feature=11 feature_reduction=0
+--------------------------------------[search]--------------------------------------
+d accuracy=0.9183 error=8    depth=4   size=11  choices=4         mem=9   time=0
+d accuracy=0.9693 error=3    depth=4   size=13  choices=6         mem=13  time=0
+d accuracy=0.9897 error=1    depth=4   size=19  choices=283       mem=28  time=0
+-------------------------------------[optimal]--------------------------------------
+d accuracy=0.9897 error=1    depth=4   size=19  choices=2208      mem=36  time=0.001
+p solution verified (1 / 1)
+d test_error=1 test_accuracy=0.9615385
