@@ -233,24 +233,23 @@ the tree with the best accuracy given a dataset is not easy to find using heuris
 a NP-hard problem. As a consequence, most heuristic algorithms use a greedy approach with sometimes pruning
 done to remove unnecessary branches to achieve better accuracy.
 
-\paragraph{} A classical greedy approach iterates over every feature and for each feature is considered every
-value as a possible split, once the best split is found, the tree grows and it recursively continues.
+\paragraph{} A classical greedy approach iterates over every feature and for each feature every value is
+considered as a possible split, once the best split is found, the tree grows and it recursively continues.
 Such an approach has a time complexity at every decision node of $O(\sum_{i}^{}F_i)$ where $F_i$ is the number
 of distinct values for the feature $i$. The worst-case scenario being $O(mn)$ where $m$ is the number of
-features and $n$ is the number of instances in the set. In a multivariate decision tree, we introduce an
-additional condition to test at every node so the time complexity becomes $O(\sum_{i}\sum_{j}F_iF_j)$ which at
-worst is $O(m^2n^2)$.
+features and $n$ is the number of examples in the dataset. In a multivariate decision tree, we introduce an
+additional condition to test at every node so the time complexity with decisions on two features becomes
+$O(\sum_{i}\sum_{j}F_iF_j)$ which at worst is $O(m^2n^2)$.
 
 \paragraph{} The version of \texttt{ID3} we implemented during our TER as well as the following heuristic methods have
-comparable worst-case time complexities in addition of not finding optimal trees.
-%complexity comparison table?%
+comparable worst-case time complexities in addition to not finding optimal trees.
 
 \newpage
 
 \section{Heuristic algorithms}
 \begin{algo}[\texttt{ID3}]
-    Iterative Dichotomiser (1986) is a greedy algorithm developed by Ross Quilan that splits the dataset
-    using the information gain metric. This algorithm is the one we implemented and adapted in Python during
+    Iterative Dichotomiser (1986) \cite{wiki-decision-tree} is a greedy algorithm developed by Ross Quilan that splits
+    the dataset using the information gain metric. This algorithm is the one we implemented and adapted in Python during
     our TER.\\
     $\mathcal{D}$ is the input dataset and $\mathcal{F}$ contains the features of a given set.
 
@@ -298,16 +297,16 @@ comparable worst-case time complexities in addition of not finding optimal trees
     \begin{itemize}
         \item $thresholds(f)$ gives all the possible values of a feature $f$
         \item $split(S, t, f)$ splits the dataset $S$ at the threshold value $t$ on the feature $f$
-        \item $infogain(S, l, r)$ computes the information gain of the split, so the set $S=l+r$ 
+        \item $infogain(S, l, r)$ computes the information gain of the split, so the set $S = l \cup r$
     \end{itemize}
 \end{algo}
 
 \begin{algo}[\texttt{C4.5}]
-    Developed in 1993 by Ross Quilan, it is the successor of \texttt{ID3} and works the same way. It is an extension
-    of \texttt{ID3} offering several improvements. This version can handle both continuous and discrete values.
-    Some post-processing is done called pruning: it eliminates branches that do not provide additional
-    information. Further versions of this algorithm have been made mainly for performance improvements but
-    the core principle stays the same.
+    Developed in 1993 by Ross Quilan \cite{wiki-decision-tree}, it is the successor of \texttt{ID3} and works
+    the same way. It is an extension of \texttt{ID3} offering several improvements. This version can handle both
+    continuous and discrete values. Some post-processing is done called pruning: it eliminates branches that do
+    not provide additional information. Further versions of this algorithm have been made mainly for performance
+    improvements but the core principle stays the same.
 \end{algo}
 
 \begin{algo}[\texttt{CART}]
@@ -355,7 +354,7 @@ over them briefly only presenting the differences with heuristic methods.}
 
 
 \chapter{Actual work}
-\section{Objective and expected results} %explain the structure of the datasets%
+\section{Objective and expected results}
 \paragraph{} The objective of this master thesis is to adapt the \texttt{Blossom} algorithm to support multivariate
 decision trees. Since \texttt{Blossom} is an anytime algorithm, even with a very large dataset and many features,
 we can always expect a result compared to a traditional heuristic algorithm, thus \texttt{Blossom} seems particularly
@@ -371,17 +370,17 @@ tedious to work with.
 \section{Preprocessing approach}
 \paragraph{} For the preprocessing approach, we made a simple python script to expand the features of a binary
 dataset. The script can add new features of value $a \lor b$ for each possible combination of two distinct
-features a and b present in the initial dataset.
+features $a$ and $b$ present in the initial dataset.
 
 \begin{example}
     For a dataset containing four features $a$, $b$, $c$ and $d$, the script will add the following six new
     features: $a \lor b$, $a \lor c$, $a \lor d$, $b \lor c$, $b \lor d$, $c \lor d$.
 \end{example}
 
-\paragraph{} The number of new features added is $k$ $n \choose 2$ where $n$ is the number of features in
-the initial dataset and $k$ is the number of cnfs used. The other supported cnfs are $(\neg x \lor y)$,
+\paragraph{} The number of new features added is $k$ $m \choose 2$ where $m$ is the number of features in
+the initial dataset and $k$ is the number of CNFs used. The other supported CNFs are $(\neg x \lor y)$,
 $(x \lor \neg y)$, $(\neg x \lor \neg y)$, $(x \oplus y)$. The script allows to expand a dataset with any number
-of cnfs chosen. The expanded dataset is given in output and is directly ready to use with the \texttt{Blossom} algorithm.
+of CNFs chosen. The expanded dataset is given in output and is directly ready to use with the \texttt{Blossom} algorithm.
 It is important to note we do not do extra preprocessing to verify if two features have the same values since
 \texttt{Blossom} already has some preprocessing steps, including feature reduction that would eliminate any unnecessary or
 redundant features.
@@ -389,7 +388,7 @@ redundant features.
 
 \section{Other approaches}
 \paragraph{} The approach we first thought about was to directly alter the code of \texttt{Blossom}. Although the
-algorithm is fairly simple to understand, the code is quite complex and written in C++, have no experience in
+algorithm is fairly simple to understand, the code is quite complex and written in C++. Having no experience in
 this language, we decided to start with the preprocessing approach as a proof of concept.
 
 \paragraph{} In the second part of the master thesis we have a few possibilities:
@@ -398,7 +397,8 @@ this language, we decided to start with the preprocessing approach as a proof of
     \item Further improve our preprocessing algorithm to try and eliminate unnecessary features to support bigger
     datasets.
     \item Find an abductive explanation \cite{multivariate-explaining} of the output multivariate decision trees
-    from \texttt{Blossom} in order to obtain the same decisions with smaller trees.
+    from \texttt{Blossom} in order to provide explanations of decisions taken by the decision tree. In general,
+    such explanations contain less features than the actual path followed to arrive at the decision.
 \end{enumerate}
 
 
@@ -673,7 +673,7 @@ different depths and longer execution times.
 
 \chapter*{Conclusion}
 \paragraph{} In a nutshell, we went over the basics of decision and multivariate decision trees, explaining some core
-principles and important classification algorithms in a brief state of the art. Our work so far lead us to develop
+principles and important classification algorithms in a brief state of the art. Our work so far led us to develop
 a Python script taking any binary dataset and expanding it with new features that are conjunctions of the original
 features. We tested this additional preprocessing step using the \texttt{Blossom} optimal decision tree classification
 algorithm and obtained multivariate decision trees with slightly better accuracies than their univariate counterparts.
