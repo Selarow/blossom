@@ -11,9 +11,9 @@ For a binary dataset, **expandfeatures.py** can add features of value $a \lor b$
 - $b \lor d$
 - $c \lor d$
 
-The number of new features added is $k * \binom{n}{2}$ where $n$ is the number of features in the initial dataset and $k$ is the number of cnfs used.
+The number of new features added is $k * \binom{m}{2}$ where $m$ is the number of features in the initial dataset and $k$ is the number of CNFs used.
 
-The other supported cnfs are $(\neg x \lor y)$, $(x \lor \neg y)$, $(\neg x \lor \neg y)$ and $(x \oplus y)$. They can also be combined.
+The other supported CNFs are $(\neg x \lor y)$, $(x \lor \neg y)$, $(\neg x \lor \neg y)$ and $(x \oplus y)$. They can also be combined.
 
 ### Usage
 
