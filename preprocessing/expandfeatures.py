@@ -18,7 +18,6 @@ class ExpandFeatures():
         self.cnfs["x_or_noty"] = cnfs[2]
         self.cnfs["notx_or_noty"] = cnfs[3]
         self.cnfs["x_xor_y"] = cnfs[4]
-        self.num_cnfs = sum(x==1 for x in self.cnfs.values())
         self.expand_features(file, file_ex)
 
 
