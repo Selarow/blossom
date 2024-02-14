@@ -1,7 +1,11 @@
 test.py
-data/
+data/*
 .vscode/
 report/*
 !/report/report.tex
 !/report/references.bib
 !/report/logo.png
+!/data/anneal.dl8
+!/data/car-un.dl8
+!/data/diabetes.dl8
+!/data/iris-bin.dl8
