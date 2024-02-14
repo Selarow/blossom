@@ -1,5 +1,6 @@
 test.py
 data/
+.vscode/
 report/*
 !/report/report.tex
 !/report/references.bib

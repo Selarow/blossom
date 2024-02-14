@@ -10,7 +10,7 @@ class ExpandFeatures():
         cnfs = [cnf for cnf in map(int, str(cnfs))]
 
         if len(cnfs) != self.NUM_CNF:
-            raise Exception("Invalid cnfs") 
+            raise Exception("Invalid CNFs")
         
         self.cnfs = dict()
         self.cnfs["x_or_y"] = cnfs[0]
