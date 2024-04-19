@@ -1,6 +1,6 @@
 # Feature expansion (preprocessing)
 
-For a binary dataset, **expandfeatures.py** or **expandfeatures.cpp** can add features of value $a \lor b$ for each possible combination of two distinct features $a$ and $b$ present in the initial dataset.
+For a binary dataset, `expandfeatures.py` or `expandfeatures.cpp` can add features of value $a \lor b$ for each possible combination of two distinct features $a$ and $b$ present in the initial dataset.
 
 **Example:** for a dataset containing 4 features $a$, $b$, $c$ and $d$, the algorithm will add the following 6 new features:
 - $a \lor b$
@@ -29,6 +29,28 @@ Each digit of the first argument can be set to 1 or 0 (true or false). These dig
 - $x \oplus y$
 
 So with 10001 as argument, the CNFs used will be ($x \lor y$) and ($x \oplus y$).
+
+
+
+# Printing solutions (postprocessing)
+
+## Requirements
+
+- [Graphviz](https://graphviz.org/)
+- anytree
+```
+pip install anytree
+```
+
+## Usage
+
+Running Blossom with `--print_sol` gives an output (sol) used by `printsol.py` to create an image (target) of the tree.
+
+```
+python printsol.py sol dataset target
+```
+
+The dataset given here should **NEVER** be an expanded dataset.
 
 
 
