@@ -1,0 +1,54 @@
+accuracy=0.9006 depth=5 test_accuracy=0.7597403
+38*: 11422
+ yes:27: 8827
+     yes:19: 10369
+         yes:15: 28117
+             yes:43: 25747
+                 yes:class-1
+                 no:class-0
+             no:14: 3726
+                 yes:class-1
+                 no:class-0
+         no:18: 14081
+             yes:16: 4920
+                 yes:class-0
+                 no:class-1
+             no:17: 29867
+                 yes:class-0
+                 no:class-1
+     no:26: 27357
+         yes:22: 12170
+             yes:20: 12976
+                 yes:class-0
+                 no:class-1
+             no:21: 27832
+                 yes:class-1
+                 no:class-0
+         no:25: 11255
+             yes:23: 3795
+                 yes:class-1
+                 no:class-0
+             no:24: 23669
+                 yes:class-0
+                 no:class-1
+ no:37: 12953
+     yes:32: 29870
+         yes:30: 15498
+             yes:28: 24044
+                 yes:class-0
+                 no:class-1
+             no:29: 14170
+                 yes:class-1
+                 no:class-0
+         no:31: 270
+             yes:class-1
+             no:class-0
+     no:36: 2480
+         yes:35: 21945
+             yes:33: 24667
+                 yes:class-0
+                 no:class-1
+             no:34: 29146
+                 yes:class-0
+                 no:class-1
+         no:class-1

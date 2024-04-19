@@ -1,0 +1,22 @@
+accuracy=1 depth=5 test_accuracy=0.9032258
+6*: 9213
+ yes:9: 1589
+     yes:12: 288
+         yes:class-0
+         no:13: 9653
+             yes:15: 1414
+                 yes:class-1
+                 no:class-0
+             no:14: 10897
+                 yes:class-0
+                 no:class-1
+     no:10: 4866
+         yes:class-0
+         no:11: 6787
+             yes:class-1
+             no:class-0
+ no:7: 8034
+     yes:8: 9864
+         yes:class-0
+         no:class-1
+     no:class-1

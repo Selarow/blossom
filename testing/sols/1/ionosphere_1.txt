@@ -1,0 +1,44 @@
+accuracy=1 depth=7 test_accuracy=0.915493
+31*: 31
+ yes:13: 131
+     yes:class-0
+     no:12: 75
+         yes:class-0
+         no:11: 5
+             yes:class-1
+             no:class-0
+ no:30: 345
+     yes:23: 55
+         yes:14: 81
+             yes:class-0
+             no:class-1
+         no:22: 129
+             yes:17: 199
+                 yes:class-0
+                 no:16: 7
+                     yes:15: 99
+                         yes:class-0
+                         no:class-1
+                     no:class-1
+             no:21: 189
+                 yes:class-1
+                 no:20: 275
+                     yes:18: 303
+                         yes:class-1
+                         no:class-0
+                     no:19: 213
+                         yes:class-0
+                         no:class-1
+     no:29: 425
+         yes:class-0
+         no:28: 237
+             yes:class-0
+             no:27: 249
+                 yes:26: 91
+                     yes:24: 201
+                         yes:class-1
+                         no:class-0
+                     no:25: 81
+                         yes:class-1
+                         no:class-0
+                 no:class-0
