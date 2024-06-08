@@ -1,0 +1,58 @@
+d readtime=0.249024
+d sorttime=0.000719
+d duplicate=479 suppressed=11 ratio=0.192915 count=2597 negative=162 positive=1934 final_count=2096
+d preprocesstime=0.000806
+d inputtime=0.343866
+d feature=19228 feature_reduction=15462
+--------------------------------------[search]--------------------------------------
+d accuracy=0.9899 error=26   depth=5   size=35  choices=11        mem=26  time=0.079
+d accuracy=0.9903 error=25   depth=5   size=35  choices=23        mem=32  time=0.084
+d accuracy=0.9907 error=24   depth=5   size=37  choices=5843      mem=40  time=1.287
+d accuracy=0.9911 error=23   depth=5   size=39  choices=10699     mem=42  time=1.858
+d accuracy=0.9915 error=22   depth=5   size=39  choices=23721     mem=44  time=3.887
+d accuracy=0.9919 error=21   depth=5   size=39  choices=67699     mem=45  time=10.44
+d accuracy=0.9922 error=20   depth=5   size=39  choices=664698    mem=45  time=85.49
+-----------------------------------[interrupted]------------------------------------
+d accuracy=0.9922 error=20   depth=5   size=39  choices=6588000   mem=45  time=900.4
+p solution verified (9 / 9)
+d test_error=14 test_accuracy=0.9784615
+41*: 6654
+ yes:22: 17080
+     yes:25: 11198
+         yes:class-1
+         no:39: 17947
+             yes:class-1
+             no:class-0
+     no:23: 3457
+         yes:class-1
+         no:24: 2199
+             yes:class-0
+             no:class-1
+ no:9: 10022
+     yes:17: 3017
+         yes:20: 7897
+             yes:21: 5267
+                 yes:class-0
+                 no:class-1
+             no:class-1
+         no:18: 125
+             yes:19: 4448
+                 yes:class-1
+                 no:class-0
+             no:class-0
+     no:10: 5761
+         yes:14: 7391
+             yes:16: 18532
+                 yes:class-0
+                 no:class-1
+             no:15: 4268
+                 yes:class-0
+                 no:class-1
+         no:11: 5287
+             yes:13: 14232
+                 yes:class-1
+                 no:class-0
+             no:12: 1299
+                 yes:class-0
+                 no:class-1
+

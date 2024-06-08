@@ -1,0 +1,58 @@
+d readtime=0.006668
+d sorttime=0.000434
+d duplicate=52 suppressed=0 ratio=0.0086739 count=5995 negative=5329 positive=614 final_count=5943
+d preprocesstime=0.000485
+d inputtime=0.013387
+d feature=216 feature_reduction=108
+--------------------------------------[search]--------------------------------------
+d accuracy=0.9998 error=1    depth=7   size=53  choices=17        mem=38  time=0
+d accuracy=1      error=0    depth=7   size=51  choices=19        mem=43  time=0
+d accuracy=1      error=0    depth=7   size=47  choices=22653     mem=74  time=0.106
+d accuracy=1      error=0    depth=7   size=45  choices=134571    mem=74  time=0.711
+d accuracy=1      error=0    depth=7   size=41  choices=1041226   mem=77  time=4.038
+-----------------------------------[interrupted]------------------------------------
+d accuracy=1      error=0    depth=7   size=41  choices=67136000  mem=80  time=900.1
+p solution verified (0 / 0)
+d test_error=8 test_accuracy=0.9946631
+14*: 64
+ yes:28: 112
+     yes:32: 96
+         yes:class-0
+         no:33: 190
+             yes:class-0
+             no:class-1
+     no:29: 194
+         yes:31: 34
+             yes:class-1
+             no:class-0
+         no:30: 92
+             yes:class-1
+             no:class-0
+ no:15: 186
+     yes:23: 212
+         yes:25: 162
+             yes:26: 158
+                 yes:class-0
+                 no:27: 34
+                     yes:class-0
+                     no:class-1
+             no:class-0
+         no:24: 174
+             yes:class-0
+             no:class-1
+     no:16: 142
+         yes:21: 140
+             yes:class-0
+             no:22: 52
+                 yes:class-1
+                 no:class-0
+         no:17: 58
+             yes:18: 212
+                 yes:19: 92
+                     yes:class-1
+                     no:20: 28
+                         yes:class-1
+                         no:class-0
+                 no:class-1
+             no:class-0
+

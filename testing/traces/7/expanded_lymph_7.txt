@@ -1,0 +1,32 @@
+d readtime=0.008835
+d sorttime=1.5e-05
+d duplicate=0 suppressed=0 ratio=0 count=117 negative=53 positive=64 final_count=117
+d preprocesstime=2.4e-05
+d inputtime=0.008887
+d feature=11458 feature_reduction=7935
+--------------------------------------[search]--------------------------------------
+d accuracy=1      error=0    depth=5   size=19  choices=7         mem=14  time=0.031
+-----------------------------------[interrupted]------------------------------------
+d accuracy=1      error=0    depth=5   size=19  choices=10536000  mem=38  time=900.1
+p solution verified (0 / 0)
+d test_error=2 test_accuracy=0.9354839
+5*: 9213
+ yes:8: 1589
+     yes:11: 288
+         yes:class-0
+         no:12: 11240
+             yes:class-1
+             no:13: 1267
+                 yes:class-1
+                 no:class-0
+     no:9: 6422
+         yes:10: 2176
+             yes:class-1
+             no:class-0
+         no:class-0
+ no:6: 7845
+     yes:7: 3956
+         yes:class-0
+         no:class-1
+     no:class-1
+

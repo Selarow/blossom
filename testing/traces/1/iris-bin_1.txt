@@ -1,8 +1,8 @@
-d readtime=0.003234
-d sorttime=2.3e-05
+d readtime=0.001503
+d sorttime=9e-06
 d duplicate=92 suppressed=1 ratio=0.783333 count=120 negative=5 positive=21 final_count=26
-d preprocesstime=4.6e-05
-d inputtime=0.003391
+d preprocesstime=1.8e-05
+d inputtime=0.001577
 d feature=12 feature_reduction=3
 --------------------------------------[search]--------------------------------------
 d accuracy=0.9916 error=1    depth=3   size=7   choices=3         mem=6   time=0
@@ -11,3 +11,9 @@ d accuracy=0.9916 error=1    depth=2   size=5   choices=19        mem=12  time=0
 d accuracy=0.9916 error=1    depth=2   size=5   choices=96        mem=12  time=0
 p solution verified (0 / 0)
 d test_error=0 test_accuracy=1
+5*: 9
+ yes:4: 3
+     yes:class-1
+     no:class-0
+ no:class-1
+

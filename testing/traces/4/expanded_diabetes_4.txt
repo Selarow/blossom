@@ -1,16 +1,86 @@
-d readtime=0.185359
-d sorttime=0.000397
+d readtime=0.100058
+d sorttime=0.000138
 d duplicate=0 suppressed=0 ratio=0 count=614 negative=214 positive=400 final_count=614
-d preprocesstime=0.000523
-d inputtime=0.248756
+d preprocesstime=0.000187
+d inputtime=0.138339
 d feature=31192 feature_reduction=24204
 --------------------------------------[search]--------------------------------------
-d accuracy=0.8615 error=85   depth=4   size=31  choices=8         mem=25  time=0.293
-d accuracy=0.8697 error=80   depth=4   size=31  choices=22        mem=28  time=0.311
-d accuracy=0.8713 error=79   depth=4   size=31  choices=12706     mem=29  time=12.91
-d accuracy=0.8745 error=77   depth=4   size=31  choices=29352     mem=30  time=31.65
-d accuracy=0.8762 error=76   depth=4   size=31  choices=38628     mem=31  time=44.82
+d accuracy=0.8876 error=69   depth=5   size=51  choices=16        mem=37  time=0.158
+d accuracy=0.8892 error=68   depth=5   size=53  choices=22        mem=41  time=0.161
+d accuracy=0.8908 error=67   depth=5   size=53  choices=40        mem=42  time=0.171
+d accuracy=0.8925 error=66   depth=5   size=53  choices=186       mem=42  time=0.243
+d accuracy=0.8941 error=65   depth=5   size=55  choices=12224     mem=44  time=5.323
+d accuracy=0.899  error=62   depth=5   size=57  choices=12226     mem=47  time=5.323
+d accuracy=0.9022 error=60   depth=5   size=59  choices=12228     mem=50  time=5.324
+d accuracy=0.9039 error=59   depth=5   size=59  choices=12230     mem=51  time=5.324
+d accuracy=0.9087 error=56   depth=5   size=59  choices=12244     mem=51  time=5.328
+d accuracy=0.912  error=54   depth=5   size=59  choices=12248     mem=51  time=5.33
+d accuracy=0.9136 error=53   depth=5   size=59  choices=12398     mem=51  time=5.377
+d accuracy=0.9153 error=52   depth=5   size=59  choices=12892     mem=51  time=5.542
+d accuracy=0.9169 error=51   depth=5   size=59  choices=33070     mem=52  time=15.29
+d accuracy=0.9185 error=50   depth=5   size=59  choices=45002     mem=53  time=20.22
+d accuracy=0.9201 error=49   depth=5   size=59  choices=118667    mem=62  time=64.91
 -----------------------------------[interrupted]------------------------------------
-d accuracy=0.8762 error=76   depth=4   size=31  choices=719500    mem=38  time=900.1
-p solution verified (76 / 76)
-d test_error=37 test_accuracy=0.7597403
+d accuracy=0.9201 error=49   depth=5   size=59  choices=1817000   mem=62  time=900
+p solution verified (49 / 49)
+d test_error=38 test_accuracy=0.7532468
+46*: 11422
+ yes:24: 8827
+     yes:32: 24767
+         yes:36: 19283
+             yes:49: 17307
+                 yes:class-1
+                 no:class-0
+             no:43: 9724
+                 yes:class-1
+                 no:class-0
+         no:33: 21181
+             yes:35: 29829
+                 yes:class-0
+                 no:class-1
+             no:34: 27411
+                 yes:class-1
+                 no:class-0
+     no:25: 18571
+         yes:29: 3436
+             yes:31: 26962
+                 yes:class-1
+                 no:class-0
+             no:30: 12966
+                 yes:class-0
+                 no:class-1
+         no:26: 10591
+             yes:28: 6510
+                 yes:class-0
+                 no:class-1
+             no:27: 25640
+                 yes:class-0
+                 no:class-1
+ no:40: 13305
+     yes:18: 12380
+         yes:21: 20684
+             yes:23: 19124
+                 yes:class-0
+                 no:class-1
+             no:22: 28423
+                 yes:class-0
+                 no:class-1
+         no:19: 17716
+             yes:class-1
+             no:20: 16344
+                 yes:class-1
+                 no:class-0
+     no:12: 3836
+         yes:15: 2448
+             yes:17: 20526
+                 yes:class-1
+                 no:class-0
+             no:16: 29819
+                 yes:class-1
+                 no:class-0
+         no:13: 17944
+             yes:14: 270
+                 yes:class-1
+                 no:class-0
+             no:class-0
+

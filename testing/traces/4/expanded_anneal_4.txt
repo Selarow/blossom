@@ -1,20 +1,53 @@
-d readtime=0.135971
-d sorttime=0.000763
+d readtime=0.060665
+d sorttime=0.000201
 d duplicate=201 suppressed=25 ratio=0.386749 count=649 negative=92 positive=306 final_count=398
-d preprocesstime=0.000981
-d inputtime=0.165881
+d preprocesstime=0.000261
+d inputtime=0.085605
 d feature=21483 feature_reduction=18354
 --------------------------------------[search]--------------------------------------
-d accuracy=0.8952 error=68   depth=4   size=19  choices=5         mem=16  time=0.091
-d accuracy=0.8967 error=67   depth=4   size=17  choices=5833      mem=19  time=3.619
-d accuracy=0.9013 error=64   depth=4   size=17  choices=5835      mem=19  time=3.621
-d accuracy=0.9029 error=63   depth=4   size=17  choices=11381     mem=20  time=6.249
-d accuracy=0.9044 error=62   depth=4   size=19  choices=11387     mem=24  time=6.25
-d accuracy=0.906  error=61   depth=4   size=19  choices=11571     mem=25  time=6.312
-d accuracy=0.9075 error=60   depth=4   size=19  choices=19255     mem=26  time=11.08
-d accuracy=0.909  error=59   depth=4   size=19  choices=223852    mem=27  time=123.3
-d accuracy=0.9121 error=57   depth=4   size=19  choices=622695    mem=27  time=349.7
+d accuracy=0.9075 error=60   depth=5   size=29  choices=9         mem=22  time=0.053
+d accuracy=0.909  error=59   depth=5   size=29  choices=17        mem=25  time=0.055
+d accuracy=0.9152 error=55   depth=5   size=31  choices=5841      mem=27  time=1.555
+d accuracy=0.9167 error=54   depth=5   size=31  choices=5845      mem=28  time=1.555
+d accuracy=0.9244 error=49   depth=5   size=33  choices=9909      mem=31  time=2.013
+d accuracy=0.926  error=48   depth=5   size=35  choices=57852     mem=39  time=9.563
 -----------------------------------[interrupted]------------------------------------
-d accuracy=0.9121 error=57   depth=4   size=19  choices=1558000   mem=27  time=901
-p solution verified (32 / 32)
-d test_error=20 test_accuracy=0.8773006
+d accuracy=0.926  error=48   depth=5   size=35  choices=5316000   mem=41  time=900.6
+p solution verified (23 / 23)
+d test_error=27 test_accuracy=0.8343558
+30*: 12401
+ yes:35: 13086
+     yes:class-0
+     no:class-1
+ no:26: 18535
+     yes:14: 17916
+         yes:10: 20694
+             yes:8: 19824
+                 yes:class-1
+                 no:class-0
+             no:9: 17469
+                 yes:class-1
+                 no:class-0
+         no:13: 17480
+             yes:11: 5558
+                 yes:class-1
+                 no:class-0
+             no:12: 2714
+                 yes:class-1
+                 no:class-0
+     no:21: 1933
+         yes:17: 17053
+             yes:15: 19785
+                 yes:class-0
+                 no:class-1
+             no:16: 5401
+                 yes:class-1
+                 no:class-0
+         no:20: 17023
+             yes:18: 4066
+                 yes:class-1
+                 no:class-0
+             no:19: 10001
+                 yes:class-1
+                 no:class-0
+

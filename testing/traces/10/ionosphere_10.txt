@@ -1,0 +1,55 @@
+d readtime=0.002132
+d sorttime=1.9e-05
+d duplicate=0 suppressed=0 ratio=0 count=280 negative=100 positive=180 final_count=280
+d preprocesstime=3e-05
+d inputtime=0.002832
+d feature=445 feature_reduction=223
+--------------------------------------[search]--------------------------------------
+d accuracy=0.9892 error=3    depth=7   size=41  choices=15        mem=28  time=0
+d accuracy=0.9928 error=2    depth=7   size=41  choices=39        mem=31  time=0
+d accuracy=0.9964 error=1    depth=7   size=41  choices=45        mem=33  time=0
+d accuracy=1      error=0    depth=7   size=43  choices=892       mem=41  time=0.007
+d accuracy=1      error=0    depth=7   size=41  choices=136345    mem=62  time=0.585
+d accuracy=1      error=0    depth=7   size=39  choices=137711    mem=62  time=0.594
+d accuracy=1      error=0    depth=7   size=37  choices=24109833  mem=74  time=144.4
+d accuracy=1      error=0    depth=7   size=35  choices=44881787  mem=74  time=264.7
+-----------------------------------[interrupted]------------------------------------
+d accuracy=1      error=0    depth=7   size=35  choices=187392000 mem=74  time=900.3
+p solution verified (0 / 0)
+d test_error=11 test_accuracy=0.8450704
+25*: 31
+ yes:10: 49
+     yes:class-0
+     no:9: 51
+         yes:class-1
+         no:class-0
+ no:24: 345
+     yes:19: 3
+         yes:class-0
+         no:18: 133
+             yes:15: 395
+                 yes:13: 117
+                     yes:11: 69
+                         yes:class-0
+                         no:class-1
+                     no:12: 89
+                         yes:class-0
+                         no:class-1
+                 no:14: 253
+                     yes:class-0
+                     no:class-1
+             no:17: 7
+                 yes:16: 303
+                     yes:class-1
+                     no:class-0
+                 no:class-1
+     no:23: 41
+         yes:class-0
+         no:22: 415
+             yes:21: 181
+                 yes:class-0
+                 no:20: 369
+                     yes:class-0
+                     no:class-1
+             no:class-0
+

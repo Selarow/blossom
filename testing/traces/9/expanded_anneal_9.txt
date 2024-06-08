@@ -1,0 +1,50 @@
+d readtime=0.06451
+d sorttime=0.000257
+d duplicate=207 suppressed=23 ratio=0.38983 count=649 negative=90 positive=306 final_count=396
+d preprocesstime=0.00033
+d inputtime=0.089493
+d feature=21483 feature_reduction=18345
+--------------------------------------[search]--------------------------------------
+d accuracy=0.912  error=57   depth=5   size=27  choices=8         mem=21  time=0.053
+d accuracy=0.9151 error=55   depth=5   size=27  choices=6448      mem=26  time=2.24
+d accuracy=0.9166 error=54   depth=5   size=27  choices=8178      mem=26  time=2.434
+d accuracy=0.9182 error=53   depth=5   size=29  choices=15780     mem=32  time=4.904
+d accuracy=0.9197 error=52   depth=5   size=29  choices=106135    mem=35  time=37.72
+d accuracy=0.9212 error=51   depth=5   size=29  choices=128459    mem=35  time=43.91
+d accuracy=0.9228 error=50   depth=5   size=27  choices=188305    mem=35  time=65.19
+d accuracy=0.9243 error=49   depth=5   size=29  choices=1925245   mem=35  time=533.3
+d accuracy=0.9259 error=48   depth=5   size=29  choices=2357568   mem=35  time=642
+-----------------------------------[interrupted]------------------------------------
+d accuracy=0.9259 error=48   depth=5   size=29  choices=3262000   mem=35  time=900.4
+p solution verified (25 / 25)
+d test_error=24 test_accuracy=0.8527607
+20*: 12401
+ yes:19: 13016
+     yes:class-0
+     no:class-1
+ no:31: 2169
+     yes:12: 2436
+         yes:16: 5069
+             yes:18: 15286
+                 yes:class-0
+                 no:class-1
+             no:17: 62
+                 yes:class-0
+                 no:class-1
+         no:13: 20276
+             yes:15: 19225
+                 yes:class-1
+                 no:class-0
+             no:14: 17390
+                 yes:class-1
+                 no:class-0
+     no:8: 5542
+         yes:class-1
+         no:9: 19287
+             yes:11: 17057
+                 yes:class-1
+                 no:class-0
+             no:10: 20994
+                 yes:class-0
+                 no:class-1
+

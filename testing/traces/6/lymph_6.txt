@@ -1,0 +1,47 @@
+d readtime=0.001213
+d sorttime=9e-06
+d duplicate=0 suppressed=0 ratio=0 count=117 negative=53 positive=64 final_count=117
+d preprocesstime=1.7e-05
+d inputtime=0.001315
+d feature=68 feature_reduction=22
+--------------------------------------[search]--------------------------------------
+d accuracy=1      error=0    depth=6   size=41  choices=15        mem=28  time=0
+d accuracy=1      error=0    depth=6   size=39  choices=42        mem=58  time=0
+d accuracy=1      error=0    depth=6   size=37  choices=1476      mem=58  time=0
+d accuracy=1      error=0    depth=6   size=35  choices=97573     mem=64  time=0.061
+d accuracy=1      error=0    depth=6   size=33  choices=2317700   mem=78  time=1.716
+d accuracy=1      error=0    depth=6   size=31  choices=5969784   mem=78  time=5.079
+d accuracy=1      error=0    depth=5   size=29  choices=5980442   mem=78  time=5.087
+d accuracy=1      error=0    depth=5   size=27  choices=9316379   mem=78  time=8.062
+-------------------------------------[optimal]--------------------------------------
+d accuracy=1      error=0    depth=5   size=27  choices=215606646 mem=79  time=205.4
+p solution verified (0 / 0)
+d test_error=9 test_accuracy=0.7096774
+24*: 4
+ yes:18: 12
+     yes:17: 47
+         yes:13: 35
+             yes:class-0
+             no:12: 43
+                 yes:class-0
+                 no:class-1
+         no:16: 30
+             yes:14: 33
+                 yes:class-1
+                 no:class-0
+             no:15: 16
+                 yes:class-1
+                 no:class-0
+     no:class-0
+ no:23: 54
+     yes:class-1
+     no:22: 37
+         yes:20: 24
+             yes:class-1
+             no:19: 10
+                 yes:class-0
+                 no:class-1
+         no:21: 48
+             yes:class-1
+             no:class-0
+

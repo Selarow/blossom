@@ -1,0 +1,305 @@
+d readtime=0.002011
+d sorttime=0.00011
+d duplicate=44 suppressed=4 ratio=0.0438449 count=1186 negative=789 positive=345 final_count=1134
+d preprocesstime=0.000139
+d inputtime=0.002734
+d feature=89 feature_reduction=43
+--------------------------------------[search]--------------------------------------
+d accuracy=0.7799 error=261  depth=7   size=109 choices=33        mem=78  time=0
+d accuracy=0.7807 error=260  depth=7   size=111 choices=101       mem=83  time=0
+d accuracy=0.7816 error=259  depth=7   size=111 choices=115       mem=84  time=0
+d accuracy=0.7824 error=258  depth=7   size=109 choices=229       mem=85  time=0
+d accuracy=0.7833 error=257  depth=7   size=111 choices=257       mem=87  time=0
+d accuracy=0.7841 error=256  depth=7   size=111 choices=275       mem=88  time=0
+d accuracy=0.7858 error=254  depth=7   size=113 choices=365       mem=91  time=0
+d accuracy=0.7866 error=253  depth=7   size=113 choices=369       mem=92  time=0
+d accuracy=0.7892 error=250  depth=7   size=113 choices=479       mem=94  time=0.001
+d accuracy=0.79   error=249  depth=7   size=113 choices=571       mem=96  time=0.001
+d accuracy=0.7908 error=248  depth=7   size=113 choices=611       mem=97  time=0.001
+d accuracy=0.7917 error=247  depth=7   size=117 choices=647       mem=101 time=0.001
+d accuracy=0.7925 error=246  depth=7   size=113 choices=2842      mem=107 time=0.003
+d accuracy=0.7951 error=243  depth=7   size=113 choices=6090      mem=107 time=0.008
+d accuracy=0.801  error=236  depth=7   size=113 choices=6096      mem=107 time=0.008
+d accuracy=0.8035 error=233  depth=7   size=113 choices=6172      mem=107 time=0.008
+d accuracy=0.8043 error=232  depth=7   size=115 choices=12836     mem=107 time=0.023
+d accuracy=0.8052 error=231  depth=7   size=117 choices=13122     mem=110 time=0.023
+d accuracy=0.806  error=230  depth=7   size=117 choices=13594     mem=111 time=0.024
+d accuracy=0.8069 error=229  depth=7   size=115 choices=14401     mem=112 time=0.025
+d accuracy=0.8077 error=228  depth=7   size=115 choices=17156     mem=112 time=0.028
+d accuracy=0.8086 error=227  depth=7   size=117 choices=18796     mem=112 time=0.03
+d accuracy=0.8094 error=226  depth=7   size=123 choices=20038     mem=127 time=0.031
+d accuracy=0.8111 error=224  depth=7   size=123 choices=21600     mem=129 time=0.033
+d accuracy=0.8119 error=223  depth=7   size=123 choices=21642     mem=129 time=0.033
+d accuracy=0.8128 error=222  depth=7   size=129 choices=21926     mem=132 time=0.033
+d accuracy=0.8145 error=220  depth=7   size=127 choices=139545    mem=141 time=0.164
+d accuracy=0.8178 error=216  depth=7   size=127 choices=139613    mem=141 time=0.164
+d accuracy=0.8187 error=215  depth=7   size=127 choices=139669    mem=141 time=0.164
+d accuracy=0.8204 error=213  depth=7   size=127 choices=140946    mem=141 time=0.167
+d accuracy=0.8212 error=212  depth=7   size=127 choices=146740    mem=141 time=0.178
+d accuracy=0.822  error=211  depth=7   size=127 choices=157099    mem=141 time=0.202
+d accuracy=0.8229 error=210  depth=7   size=127 choices=158573    mem=141 time=0.205
+d accuracy=0.8246 error=208  depth=7   size=127 choices=168158    mem=141 time=0.223
+d accuracy=0.8254 error=207  depth=7   size=127 choices=253397    mem=141 time=0.398
+d accuracy=0.8263 error=206  depth=7   size=127 choices=290129    mem=141 time=0.469
+d accuracy=0.8271 error=205  depth=7   size=133 choices=621288    mem=142 time=0.993
+d accuracy=0.8279 error=204  depth=7   size=147 choices=1168718   mem=167 time=1.595
+d accuracy=0.8288 error=203  depth=7   size=139 choices=1186278   mem=175 time=1.615
+d accuracy=0.8296 error=202  depth=7   size=143 choices=1188601   mem=175 time=1.617
+d accuracy=0.8305 error=201  depth=7   size=149 choices=1562490   mem=182 time=2.015
+d accuracy=0.8313 error=200  depth=7   size=151 choices=1610141   mem=185 time=2.058
+d accuracy=0.8322 error=199  depth=7   size=151 choices=1622963   mem=187 time=2.07
+d accuracy=0.833  error=198  depth=7   size=151 choices=3490976   mem=197 time=4.061
+d accuracy=0.8338 error=197  depth=7   size=151 choices=3491056   mem=198 time=4.061
+d accuracy=0.8347 error=196  depth=7   size=151 choices=3491062   mem=198 time=4.061
+d accuracy=0.8355 error=195  depth=7   size=151 choices=3498708   mem=198 time=4.074
+d accuracy=0.8364 error=194  depth=7   size=151 choices=3498722   mem=198 time=4.074
+d accuracy=0.8372 error=193  depth=7   size=149 choices=3793739   mem=198 time=4.597
+d accuracy=0.8381 error=192  depth=7   size=151 choices=3793811   mem=198 time=4.597
+d accuracy=0.8389 error=191  depth=7   size=151 choices=3824520   mem=199 time=4.638
+d accuracy=0.8397 error=190  depth=7   size=151 choices=3825660   mem=199 time=4.64
+d accuracy=0.8406 error=189  depth=7   size=151 choices=4250974   mem=200 time=5.345
+d accuracy=0.8414 error=188  depth=7   size=151 choices=5585738   mem=200 time=8.028
+d accuracy=0.8423 error=187  depth=7   size=151 choices=5797167   mem=200 time=8.373
+d accuracy=0.8431 error=186  depth=7   size=151 choices=5797179   mem=200 time=8.373
+d accuracy=0.844  error=185  depth=7   size=151 choices=10249057  mem=200 time=16.89
+d accuracy=0.8448 error=184  depth=7   size=159 choices=21819369  mem=200 time=38.91
+d accuracy=0.8456 error=183  depth=7   size=159 choices=21819471  mem=200 time=38.91
+d accuracy=0.8465 error=182  depth=7   size=185 choices=29679623  mem=228 time=47.96
+d accuracy=0.8482 error=180  depth=7   size=183 choices=29705940  mem=253 time=48.01
+d accuracy=0.849  error=179  depth=7   size=185 choices=29705978  mem=253 time=48.01
+d accuracy=0.8499 error=178  depth=7   size=187 choices=29936087  mem=254 time=48.4
+d accuracy=0.8507 error=177  depth=7   size=189 choices=30069033  mem=258 time=48.55
+d accuracy=0.8516 error=176  depth=7   size=189 choices=30113654  mem=261 time=48.62
+d accuracy=0.8541 error=173  depth=7   size=189 choices=30154467  mem=261 time=48.68
+d accuracy=0.8549 error=172  depth=7   size=189 choices=30328311  mem=291 time=48.96
+d accuracy=0.8558 error=171  depth=7   size=189 choices=30488392  mem=291 time=49.21
+d accuracy=0.8566 error=170  depth=7   size=189 choices=30518545  mem=292 time=49.24
+d accuracy=0.8575 error=169  depth=7   size=187 choices=30519220  mem=292 time=49.24
+d accuracy=0.8583 error=168  depth=7   size=187 choices=30521598  mem=292 time=49.25
+d accuracy=0.8591 error=167  depth=7   size=189 choices=31233712  mem=292 time=50.24
+d accuracy=0.86   error=166  depth=7   size=189 choices=31233748  mem=292 time=50.24
+d accuracy=0.8608 error=165  depth=7   size=189 choices=31233750  mem=292 time=50.24
+d accuracy=0.8617 error=164  depth=7   size=189 choices=31279626  mem=292 time=50.3
+d accuracy=0.8625 error=163  depth=7   size=189 choices=36120011  mem=292 time=58.55
+d accuracy=0.8634 error=162  depth=7   size=189 choices=37588236  mem=292 time=60.91
+d accuracy=0.8642 error=161  depth=7   size=193 choices=44118418  mem=292 time=71.64
+d accuracy=0.865  error=160  depth=7   size=195 choices=44133737  mem=292 time=71.66
+d accuracy=0.8659 error=159  depth=7   size=195 choices=44133805  mem=292 time=71.66
+d accuracy=0.8667 error=158  depth=7   size=195 choices=44133829  mem=292 time=71.66
+d accuracy=0.8676 error=157  depth=7   size=195 choices=44176049  mem=292 time=71.71
+d accuracy=0.8684 error=156  depth=7   size=197 choices=44281688  mem=292 time=71.84
+d accuracy=0.8693 error=155  depth=7   size=201 choices=44282919  mem=292 time=71.84
+d accuracy=0.8701 error=154  depth=7   size=199 choices=44282921  mem=292 time=71.84
+d accuracy=0.8718 error=152  depth=7   size=205 choices=44499168  mem=302 time=72.08
+d accuracy=0.8726 error=151  depth=7   size=205 choices=48540904  mem=308 time=77.47
+d accuracy=0.8735 error=150  depth=7   size=205 choices=83835043  mem=317 time=133.4
+d accuracy=0.8752 error=148  depth=7   size=203 choices=84417865  mem=317 time=134.3
+d accuracy=0.876  error=147  depth=7   size=203 choices=309106886 mem=317 time=516.1
+-----------------------------------[interrupted]------------------------------------
+d accuracy=0.876  error=147  depth=7   size=203 choices=526848000 mem=317 time=900.2
+p solution verified (143 / 143)
+d test_error=91 test_accuracy=0.6946309
+216*: 30
+ yes:131: 69
+     yes:195: 6
+         yes:146: 63
+             yes:242: 46
+                 yes:300: 16
+                     yes:301: 0
+                         yes:class-0
+                         no:class-1
+                     no:class-0
+                 no:284: 4
+                     yes:299: 0
+                         yes:class-1
+                         no:class-0
+                     no:144: 28
+                         yes:class-0
+                         no:class-1
+             no:94: 50
+                 yes:132: 85
+                     yes:class-0
+                     no:264: 18
+                         yes:class-0
+                         no:class-1
+                 no:8: 28
+                     yes:class-0
+                     no:245: 67
+                         yes:class-0
+                         no:class-1
+         no:111: 10
+             yes:162: 24
+                 yes:136: 67
+                     yes:215: 14
+                         yes:class-1
+                         no:class-0
+                     no:203: 28
+                         yes:class-0
+                         no:class-1
+                 no:164: 8
+                     yes:class-0
+                     no:200: 67
+                         yes:class-1
+                         no:class-0
+             no:84: 52
+                 yes:207: 26
+                     yes:190: 16
+                         yes:class-1
+                         no:class-0
+                     no:170: 12
+                         yes:class-1
+                         no:class-0
+                 no:179: 12
+                     yes:9: 24
+                         yes:class-0
+                         no:class-1
+                     no:class-0
+     no:165: 28
+         yes:class-0
+         no:12: 44
+             yes:112: 18
+                 yes:class-0
+                 no:87: 77
+                     yes:98: 24
+                         yes:class-1
+                         no:class-0
+                     no:171: 71
+                         yes:class-1
+                         no:class-0
+             no:142: 16
+                 yes:163: 73
+                     yes:class-0
+                     no:151: 81
+                         yes:class-1
+                         no:class-0
+                 no:141: 18
+                     yes:153: 77
+                         yes:class-1
+                         no:class-0
+                     no:class-0
+ no:122: 77
+     yes:48: 48
+         yes:33: 22
+             yes:25: 69
+                 yes:82: 8
+                     yes:130: 14
+                         yes:class-0
+                         no:class-1
+                     no:129: 63
+                         yes:class-1
+                         no:class-0
+                 no:24: 8
+                     yes:100: 36
+                         yes:class-0
+                         no:class-1
+                     no:99: 42
+                         yes:class-0
+                         no:class-1
+             no:32: 38
+                 yes:28: 71
+                     yes:26: 24
+                         yes:class-1
+                         no:class-0
+                     no:27: 59
+                         yes:class-0
+                         no:class-1
+                 no:31: 8
+                     yes:29: 40
+                         yes:class-1
+                         no:class-0
+                     no:30: 73
+                         yes:class-0
+                         no:class-1
+         no:47: 52
+             yes:40: 38
+                 yes:36: 16
+                     yes:34: 34
+                         yes:class-1
+                         no:class-0
+                     no:35: 22
+                         yes:class-1
+                         no:class-0
+                 no:39: 65
+                     yes:37: 63
+                         yes:class-1
+                         no:class-0
+                     no:38: 40
+                         yes:class-1
+                         no:class-0
+             no:46: 22
+                 yes:43: 63
+                     yes:41: 61
+                         yes:class-1
+                         no:class-0
+                     no:42: 14
+                         yes:class-1
+                         no:class-0
+                 no:45: 54
+                     yes:44: 69
+                         yes:class-0
+                         no:class-1
+                     no:class-0
+     no:124: 20
+         yes:63: 16
+             yes:55: 14
+                 yes:51: 34
+                     yes:49: 44
+                         yes:class-1
+                         no:class-0
+                     no:50: 61
+                         yes:class-1
+                         no:class-0
+                 no:54: 48
+                     yes:52: 44
+                         yes:class-0
+                         no:class-1
+                     no:53: 79
+                         yes:class-1
+                         no:class-0
+             no:62: 36
+                 yes:58: 71
+                     yes:56: 6
+                         yes:class-0
+                         no:class-1
+                     no:57: 85
+                         yes:class-1
+                         no:class-0
+                 no:61: 73
+                     yes:59: 69
+                         yes:class-0
+                         no:class-1
+                     no:60: 40
+                         yes:class-1
+                         no:class-0
+         no:93: 44
+             yes:70: 83
+                 yes:66: 36
+                     yes:64: 65
+                         yes:class-0
+                         no:class-1
+                     no:65: 6
+                         yes:class-0
+                         no:class-1
+                 no:69: 71
+                     yes:67: 12
+                         yes:class-0
+                         no:class-1
+                     no:68: 73
+                         yes:class-1
+                         no:class-0
+             no:77: 2
+                 yes:73: 22
+                     yes:71: 54
+                         yes:class-0
+                         no:class-1
+                     no:72: 83
+                         yes:class-1
+                         no:class-0
+                 no:76: 50
+                     yes:74: 34
+                         yes:class-1
+                         no:class-0
+                     no:75: 4
+                         yes:class-1
+                         no:class-0
+

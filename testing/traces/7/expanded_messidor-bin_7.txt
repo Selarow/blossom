@@ -1,0 +1,86 @@
+d readtime=0.057936
+d sorttime=0.000109
+d duplicate=9 suppressed=4 ratio=0.0184783 count=920 negative=428 positive=475 final_count=903
+d preprocesstime=0.000151
+d inputtime=0.085797
+d feature=18361 feature_reduction=5633
+--------------------------------------[search]--------------------------------------
+d accuracy=0.7782 error=204  depth=5   size=53  choices=15        mem=40  time=0.181
+d accuracy=0.7793 error=203  depth=5   size=53  choices=27        mem=43  time=0.186
+d accuracy=0.7804 error=202  depth=5   size=53  choices=29        mem=43  time=0.187
+d accuracy=0.7826 error=200  depth=5   size=53  choices=8727      mem=43  time=5.002
+d accuracy=0.7858 error=197  depth=5   size=55  choices=24317     mem=45  time=13.74
+d accuracy=0.7869 error=196  depth=5   size=55  choices=40351     mem=47  time=16.8
+d accuracy=0.788  error=195  depth=5   size=55  choices=40411     mem=47  time=16.83
+d accuracy=0.7934 error=190  depth=5   size=55  choices=40423     mem=47  time=16.84
+d accuracy=0.7945 error=189  depth=5   size=55  choices=62497     mem=48  time=32.92
+d accuracy=0.7956 error=188  depth=5   size=55  choices=63641     mem=48  time=33.12
+d accuracy=0.7967 error=187  depth=5   size=55  choices=63921     mem=48  time=33.19
+d accuracy=0.7978 error=186  depth=5   size=55  choices=78081     mem=50  time=35.9
+d accuracy=0.7989 error=185  depth=5   size=55  choices=100227    mem=51  time=46.01
+d accuracy=0.8    error=184  depth=5   size=55  choices=100391    mem=57  time=46.06
+d accuracy=0.801  error=183  depth=5   size=57  choices=299935    mem=59  time=160
+d accuracy=0.8021 error=182  depth=5   size=57  choices=445074    mem=60  time=241.1
+d accuracy=0.8032 error=181  depth=5   size=57  choices=452612    mem=60  time=242.7
+-----------------------------------[interrupted]------------------------------------
+d accuracy=0.8032 error=181  depth=5   size=57  choices=1842000   mem=60  time=900.7
+p solution verified (177 / 177)
+d test_error=79 test_accuracy=0.6580087
+14*: 1644
+ yes:30: 9678
+     yes:35: 16032
+         yes:39: 10122
+             yes:58: 1514
+                 yes:class-1
+                 no:class-0
+             no:44: 16388
+                 yes:class-1
+                 no:class-0
+         no:36: 9200
+             yes:38: 12465
+                 yes:class-1
+                 no:class-0
+             no:37: 8549
+                 yes:class-0
+                 no:class-1
+     no:31: 7301
+         yes:class-1
+         no:32: 15005
+             yes:34: 5995
+                 yes:class-0
+                 no:class-1
+             no:33: 4503
+                 yes:class-0
+                 no:class-1
+ no:15: 10382
+     yes:23: 15007
+         yes:27: 14845
+             yes:29: 14605
+                 yes:class-0
+                 no:class-1
+             no:28: 9233
+                 yes:class-1
+                 no:class-0
+         no:24: 870
+             yes:26: 1060
+                 yes:class-0
+                 no:class-1
+             no:25: 11467
+                 yes:class-0
+                 no:class-1
+     no:16: 1018
+         yes:20: 2768
+             yes:22: 13092
+                 yes:class-0
+                 no:class-1
+             no:21: 11190
+                 yes:class-1
+                 no:class-0
+         no:17: 17505
+             yes:19: 18156
+                 yes:class-1
+                 no:class-0
+             no:18: 5306
+                 yes:class-1
+                 no:class-0
+

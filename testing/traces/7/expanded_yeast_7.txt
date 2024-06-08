@@ -1,0 +1,81 @@
+d readtime=0.119772
+d sorttime=0.000396
+d duplicate=40 suppressed=1 ratio=0.0354132 count=1186 negative=796 positive=348 final_count=1144
+d preprocesstime=0.000496
+d inputtime=0.166567
+d feature=19669 feature_reduction=15287
+--------------------------------------[search]--------------------------------------
+d accuracy=0.8153 error=219  depth=5   size=43  choices=12        mem=33  time=0.085
+d accuracy=0.8161 error=218  depth=5   size=43  choices=24        mem=36  time=0.09
+d accuracy=0.8178 error=216  depth=5   size=45  choices=8150      mem=38  time=3.206
+d accuracy=0.8187 error=215  depth=5   size=45  choices=9146      mem=39  time=3.516
+d accuracy=0.8204 error=213  depth=5   size=45  choices=16304     mem=40  time=5.934
+d accuracy=0.8212 error=212  depth=5   size=45  choices=16316     mem=40  time=5.936
+d accuracy=0.822  error=211  depth=5   size=45  choices=16452     mem=40  time=5.955
+d accuracy=0.8229 error=210  depth=5   size=45  choices=23312     mem=41  time=7.003
+d accuracy=0.8237 error=209  depth=5   size=45  choices=23912     mem=41  time=7.166
+d accuracy=0.8246 error=208  depth=5   size=45  choices=28128     mem=41  time=8.524
+d accuracy=0.8254 error=207  depth=5   size=45  choices=29866     mem=42  time=8.978
+d accuracy=0.8263 error=206  depth=5   size=49  choices=45462     mem=50  time=13.96
+d accuracy=0.8271 error=205  depth=5   size=49  choices=45480     mem=50  time=13.96
+d accuracy=0.8279 error=204  depth=5   size=51  choices=53690     mem=52  time=15.97
+d accuracy=0.8296 error=202  depth=5   size=51  choices=61662     mem=54  time=19.34
+d accuracy=0.8305 error=201  depth=5   size=51  choices=220316    mem=55  time=86.03
+d accuracy=0.8313 error=200  depth=5   size=51  choices=221196    mem=55  time=86.13
+d accuracy=0.8322 error=199  depth=5   size=51  choices=257686    mem=55  time=97.31
+-----------------------------------[interrupted]------------------------------------
+d accuracy=0.8322 error=199  depth=5   size=51  choices=2450000   mem=55  time=900.5
+p solution verified (198 / 198)
+d test_error=87 test_accuracy=0.7080537
+37*: 11231
+ yes:17: 1995
+     yes:15: 3486
+         yes:48: 8670
+             yes:50: 11384
+                 yes:class-0
+                 no:class-1
+             no:49: 2720
+                 yes:class-0
+                 no:class-1
+         no:14: 11210
+             yes:12: 8007
+                 yes:class-0
+                 no:class-1
+             no:13: 9481
+                 yes:class-0
+                 no:class-1
+     no:16: 7518
+         yes:class-0
+         no:class-1
+ no:32: 9532
+     yes:24: 16127
+         yes:20: 11883
+             yes:18: 1257
+                 yes:class-0
+                 no:class-1
+             no:19: 2741
+                 yes:class-0
+                 no:class-1
+         no:23: 12920
+             yes:21: 13301
+                 yes:class-0
+                 no:class-1
+             no:22: 5341
+                 yes:class-1
+                 no:class-0
+     no:31: 5983
+         yes:27: 8703
+             yes:25: 15639
+                 yes:class-1
+                 no:class-0
+             no:26: 8004
+                 yes:class-1
+                 no:class-0
+         no:30: 6803
+             yes:28: 14756
+                 yes:class-0
+                 no:class-1
+             no:29: 3528
+                 yes:class-1
+                 no:class-0
+

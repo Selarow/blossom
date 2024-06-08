@@ -1,0 +1,21 @@
+d readtime=0.00119
+d sorttime=8e-06
+d duplicate=0 suppressed=0 ratio=0 count=98 negative=49 positive=49 final_count=98
+d preprocesstime=1.6e-05
+d inputtime=0.00137
+d feature=286 feature_reduction=24
+--------------------------------------[search]--------------------------------------
+d accuracy=1      error=0    depth=3   size=9   choices=3         mem=8   time=0
+d accuracy=1      error=0    depth=3   size=7   choices=520       mem=15  time=0.004
+-------------------------------------[optimal]--------------------------------------
+d accuracy=1      error=0    depth=3   size=7   choices=50238     mem=15  time=0.455
+p solution verified (0 / 0)
+d test_error=0 test_accuracy=1
+7*: 7
+ yes:class-1
+ no:6: 20
+     yes:class-0
+     no:5: 70
+         yes:class-0
+         no:class-1
+

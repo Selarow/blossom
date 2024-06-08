@@ -1,16 +1,33 @@
-d readtime=0.002921
-d sorttime=1.8e-05
+d readtime=0.002086
+d sorttime=7e-06
 d duplicate=0 suppressed=0 ratio=0 count=98 negative=49 positive=49 final_count=98
-d preprocesstime=4e-05
-d inputtime=0.003134
+d preprocesstime=1.5e-05
+d inputtime=0.002163
 d feature=11 feature_reduction=0
 --------------------------------------[search]--------------------------------------
-d accuracy=0.9081 error=9    depth=4   size=11  choices=4         mem=9   time=0
-d accuracy=0.9591 error=4    depth=4   size=13  choices=6         mem=13  time=0
-d accuracy=0.9693 error=3    depth=4   size=19  choices=618       mem=30  time=0.001
-d accuracy=0.9795 error=2    depth=4   size=19  choices=630       mem=30  time=0.001
-d accuracy=0.9897 error=1    depth=4   size=19  choices=1112      mem=34  time=0.001
+d accuracy=0.9285 error=7    depth=7   size=29  choices=10        mem=21  time=0
+d accuracy=0.9897 error=1    depth=7   size=29  choices=14        mem=21  time=0
+d accuracy=1      error=0    depth=7   size=31  choices=20        mem=27  time=0
+d accuracy=1      error=0    depth=7   size=29  choices=77        mem=45  time=0
+d accuracy=1      error=0    depth=6   size=21  choices=140       mem=49  time=0
+d accuracy=1      error=0    depth=5   size=15  choices=377       mem=49  time=0
 -------------------------------------[optimal]--------------------------------------
-d accuracy=0.9897 error=1    depth=4   size=19  choices=2369      mem=36  time=0.003
-p solution verified (1 / 1)
-d test_error=1 test_accuracy=0.9615385
+d accuracy=1      error=0    depth=5   size=15  choices=12473     mem=66  time=0.006
+p solution verified (0 / 0)
+d test_error=0 test_accuracy=1
+17*: 7
+ yes:class-1
+ no:16: 0
+     yes:11: 2
+         yes:class-1
+         no:class-0
+     no:15: 2
+         yes:class-0
+         no:14: 1
+             yes:12: 3
+                 yes:class-1
+                 no:class-0
+             no:13: 3
+                 yes:class-0
+                 no:class-1
+

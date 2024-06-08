@@ -1,18 +1,134 @@
-d readtime=0
-d sorttime=0
+d readtime=0.00212
+d sorttime=9.7e-05
 d duplicate=0 suppressed=0 ratio=0 count=1382 negative=968 positive=414 final_count=1382
-d preprocesstime=0
-d inputtime=0.001053
+d preprocesstime=0.000122
+d inputtime=0.002615
 d feature=21 feature_reduction=0
 --------------------------------------[search]--------------------------------------
-d accuracy=0.8994 error=139  depth=4   size=11  choices=4         mem=9   time=0
-d accuracy=0.9117 error=122  depth=4   size=11  choices=24        mem=12  time=0
-d accuracy=0.9131 error=120  depth=4   size=11  choices=28        mem=12  time=0
-d accuracy=0.9146 error=118  depth=4   size=15  choices=926       mem=19  time=0.005
-d accuracy=0.9175 error=114  depth=4   size=21  choices=10297     mem=35  time=0.042
-d accuracy=0.9189 error=112  depth=4   size=23  choices=11350     mem=35  time=0.045
-d accuracy=0.9204 error=110  depth=4   size=25  choices=13464     mem=40  time=0.053
+d accuracy=0.9703 error=41   depth=7   size=47  choices=15        mem=34  time=0
+d accuracy=0.9717 error=39   depth=7   size=47  choices=17        mem=37  time=0
+d accuracy=0.9732 error=37   depth=7   size=47  choices=21        mem=37  time=0
+d accuracy=0.9739 error=36   depth=7   size=49  choices=47        mem=39  time=0
+d accuracy=0.9746 error=35   depth=7   size=51  choices=4118      mem=60  time=0.002
+d accuracy=0.9761 error=33   depth=7   size=57  choices=9535      mem=65  time=0.005
+d accuracy=0.9804 error=27   depth=7   size=57  choices=9589      mem=65  time=0.005
+d accuracy=0.9826 error=24   depth=7   size=57  choices=11012     mem=71  time=0.006
+d accuracy=0.9833 error=23   depth=7   size=59  choices=115061    mem=100 time=0.074
+d accuracy=0.984  error=22   depth=7   size=61  choices=581872    mem=105 time=0.366
+d accuracy=0.9848 error=21   depth=7   size=63  choices=581963    mem=105 time=0.367
+d accuracy=0.9855 error=20   depth=7   size=87  choices=1237636   mem=135 time=0.745
+d accuracy=0.9862 error=19   depth=7   size=73  choices=1871545   mem=157 time=1.139
+d accuracy=0.9905 error=13   depth=7   size=77  choices=1894045   mem=157 time=1.155
+d accuracy=0.9913 error=12   depth=7   size=83  choices=3024222   mem=158 time=1.822
+d accuracy=0.992  error=11   depth=7   size=105 choices=39951688  mem=210 time=21.28
+d accuracy=0.9927 error=10   depth=7   size=107 choices=39951750  mem=210 time=21.28
+d accuracy=0.9934 error=9    depth=7   size=95  choices=60026401  mem=227 time=34.25
+d accuracy=0.9942 error=8    depth=7   size=103 choices=60038499  mem=227 time=34.26
 -------------------------------------[optimal]--------------------------------------
-d accuracy=0.9204 error=110  depth=4   size=25  choices=46966     mem=45  time=0.168
-p solution verified (110 / 110)
-d test_error=26 test_accuracy=0.9248555
+d accuracy=0.9942 error=8    depth=7   size=103 choices=168328320 mem=231 time=91.03
+p solution verified (8 / 8)
+d test_error=12 test_accuracy=0.9653179
+186*: 4
+ yes:21: 12
+     yes:class-0
+     no:22: 19
+         yes:28: 2
+             yes:198: 16
+                 yes:140: 9
+                     yes:153: 14
+                         yes:class-1
+                         no:class-0
+                     no:55: 8
+                         yes:class-0
+                         no:class-1
+                 no:205: 15
+                     yes:class-0
+                     no:class-1
+             no:29: 3
+                 yes:126: 8
+                     yes:148: 17
+                         yes:class-1
+                         no:class-0
+                     no:155: 15
+                         yes:class-0
+                         no:class-1
+                 no:class-0
+         no:23: 18
+             yes:class-0
+             no:24: 2
+                 yes:26: 8
+                     yes:27: 14
+                         yes:class-0
+                         no:class-1
+                     no:class-1
+                 no:25: 3
+                     yes:class-1
+                     no:class-0
+ no:188: 19
+     yes:44: 15
+         yes:12: 2
+             yes:17: 12
+                 yes:class-0
+                 no:18: 7
+                     yes:20: 8
+                         yes:class-0
+                         no:class-1
+                     no:19: 5
+                         yes:class-0
+                         no:class-1
+             no:13: 3
+                 yes:14: 8
+                     yes:16: 13
+                         yes:class-1
+                         no:class-0
+                     no:15: 12
+                         yes:class-0
+                         no:class-1
+                 no:class-0
+         no:132: 1
+             yes:83: 8
+                 yes:38: 16
+                     yes:class-0
+                     no:11: 12
+                         yes:class-0
+                         no:class-1
+                 no:62: 13
+                     yes:10: 9
+                         yes:class-0
+                         no:class-1
+                     no:41: 12
+                         yes:class-0
+                         no:class-1
+             no:6: 12
+                 yes:class-0
+                 no:82: 0
+                     yes:121: 5
+                         yes:class-0
+                         no:class-1
+                     no:79: 5
+                         yes:class-1
+                         no:class-1
+     no:135: 20
+         yes:174: 14
+             yes:92: 0
+                 yes:93: 8
+                     yes:133: 15
+                         yes:class-0
+                         no:class-1
+                     no:67: 5
+                         yes:class-0
+                         no:class-1
+                 no:134: 8
+                     yes:112: 15
+                         yes:class-0
+                         no:class-1
+                     no:class-1
+             no:169: 13
+                 yes:130: 0
+                     yes:56: 5
+                         yes:class-0
+                         no:class-1
+                     no:class-1
+                 no:class-0
+         no:class-0
+
