@@ -1,0 +1,50 @@
+accuracy=1 depth=7 test_accuracy=0.8978102
+78*: 50
+ yes:11: 44
+     yes:class-1
+     no:10: 33
+         yes:class-1
+         no:9: 18
+             yes:class-1
+             no:40: 31
+                 yes:class-1
+                 no:class-0
+ no:42: 20
+     yes:14: 73
+         yes:class-1
+         no:13: 32
+             yes:12: 62
+                 yes:class-0
+                 no:class-1
+             no:class-0
+     no:29: 30
+         yes:19: 1
+             yes:class-0
+             no:18: 71
+                 yes:15: 18
+                     yes:class-1
+                     no:class-0
+                 no:17: 16
+                     yes:class-0
+                     no:16: 72
+                         yes:class-0
+                         no:class-1
+         no:28: 11
+             yes:22: 41
+                 yes:class-0
+                 no:21: 21
+                     yes:20: 51
+                         yes:class-1
+                         no:class-0
+                     no:class-1
+             no:27: 15
+                 yes:23: 36
+                     yes:class-0
+                     no:class-1
+                 no:26: 64
+                     yes:24: 58
+                         yes:class-0
+                         no:class-1
+                     no:25: 40
+                         yes:class-0
+                         no:class-1

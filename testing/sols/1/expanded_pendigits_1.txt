@@ -1,0 +1,30 @@
+accuracy=1 depth=5 test_accuracy=0.9973316
+8*: 89901
+ yes:15: 50152
+     yes:18: 59102
+         yes:20: 93782
+             yes:class-0
+             no:21: 71072
+                 yes:class-0
+                 no:class-1
+         no:19: 13175
+             yes:class-1
+             no:class-0
+     no:16: 97235
+         yes:17: 107049
+             yes:class-1
+             no:class-0
+         no:class-0
+ no:9: 103077
+     yes:10: 51656
+         yes:12: 47906
+             yes:14: 70864
+                 yes:class-1
+                 no:class-0
+             no:13: 995
+                 yes:class-0
+                 no:class-1
+         no:11: 94558
+             yes:class-0
+             no:class-1
+     no:class-0

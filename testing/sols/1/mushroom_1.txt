@@ -1,0 +1,18 @@
+accuracy=1 depth=5 test_accuracy=1
+14*: 27
+ yes:10: 102
+     yes:class-0
+     no:9: 38
+         yes:class-1
+         no:8: 61
+             yes:class-0
+             no:7: 107
+                 yes:class-0
+                 no:class-1
+ no:13: 20
+     yes:class-0
+     no:12: 24
+         yes:class-0
+         no:11: 28
+             yes:class-0
+             no:class-1
