@@ -1,4 +1,5 @@
 import sys
+from copy import deepcopy
 from itertools import combinations
 from anytree import Node, RenderTree
 from anytree.exporter import UniqueDotExporter
@@ -22,7 +23,7 @@ class PrintSol():
     P_OR = 3/4
     P_XOR = 1/2
 
-    # dataset should never be an expanded dataset
+    # Dataset should never be an expanded dataset
     def __init__(self, sol, dataset, target):
         features = self.get_features(dataset)
 
@@ -74,7 +75,7 @@ class PrintSol():
                         feature = str(l[-1])
                     
                     if depth == 0:
-                        self.root = Node(feature, tag="yes")
+                        self.root = Node(feature, tag="root")
                         nodes[depth] = self.root
                     
                     elif depth > last_depth:
@@ -87,9 +88,6 @@ class PrintSol():
                     
                     else:
                         nodes[depth] = Node(feature, parent=nodes[depth-1], tag=tag)
-
-        #for pre, fill, node in RenderTree(root):
-        #    print("%s%s" % (pre, node.name))
         
         UniqueDotExporter(self.root).to_picture(target)
 
@@ -98,7 +96,7 @@ class PrintSol():
         path.append([current_node.tag, current_node.name])
 
         if not current_node.children:
-            paths.append(list(path))
+            paths.append(self.rotate(list(path)))
         
         else:
             for child in current_node.children:
@@ -107,11 +105,22 @@ class PrintSol():
         path.pop()
 
 
-    def get_all_paths(self, node):
-        all_paths = []
-        self.traverse(node, [], all_paths)
+    def rotate(self, path):
+        first_elements = [sublist[0] for sublist in path]
+        first_elements = first_elements[1:] + first_elements[:1]
+        updated_path = deepcopy(path)
 
-        return all_paths
+        for i in range(len(updated_path)):
+            updated_path[i][0] = first_elements[i]
+        
+        return updated_path
+
+
+    def get_all_paths(self, node):
+        paths = []
+        self.traverse(node, [], paths)
+
+        return paths
 
 
     def avg_len_axp(self):
