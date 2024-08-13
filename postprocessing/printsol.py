@@ -45,11 +45,11 @@ class PrintSol():
 
     def get_combinations(self, features):
         for f1, f2 in combinations(features, 2):
-            self.LABELS.append(f"{f1} or {f2}")
-            self.LABELS.append(f"not {f1} or {f2}")
-            self.LABELS.append(f"{f1} or not {f2}")
-            self.LABELS.append(f"not {f1} or not {f2}")
-            self.LABELS.append(f"{f1} xor {f2}")
+            self.LABELS.append(f"x{f1} or x{f2}")
+            self.LABELS.append(f"not x{f1} or x{f2}")
+            self.LABELS.append(f"x{f1} or not x{f2}")
+            self.LABELS.append(f"not x{f1} or not x{f2}")
+            self.LABELS.append(f"x{f1} xor x{f2}")
 
 
     def draw_tree(self, sol, target):

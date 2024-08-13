@@ -51,9 +51,19 @@ python printsol.py sol dataset target
 ```
 
 The dataset given here should **NEVER** be an expanded dataset.
+Average length of explanations given in output.
 
 
 
 # Abductive explanation (postprocessing)
 
-TBD
+## Requirements
+
+- constraint
+```
+pip install constraint
+```
+
+## Usage
+
+CSPSolver.py allow to solve a CSP and manually find a weak AXp of a decision.
