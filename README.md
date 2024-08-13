@@ -51,7 +51,7 @@ python printsol.py sol dataset target
 ```
 
 The dataset given here should **NEVER** be an expanded dataset.
-Average length of explanations given in output.
+Average length of explanations and number of nodes given in output.
 
 
 

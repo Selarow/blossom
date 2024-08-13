@@ -1,7 +1,7 @@
 import sys
 from copy import deepcopy
 from itertools import combinations
-from anytree import Node, RenderTree
+from anytree import Node
 from anytree.exporter import UniqueDotExporter
 
 
@@ -32,6 +32,7 @@ class PrintSol():
         
         self.get_combinations(features)
         self.draw_tree(sol, target)
+        self.num_nodes = self.count_nodes(self.root)
 
 
     def get_features(self, dataset):
@@ -90,6 +91,10 @@ class PrintSol():
                         nodes[depth] = Node(feature, parent=nodes[depth-1], tag=tag)
         
         UniqueDotExporter(self.root).to_picture(target)
+
+
+    def count_nodes(self, node):
+        return 1 + sum(self.count_nodes(child) for child in node.children)
 
 
     def traverse(self, current_node, path, paths):
@@ -160,4 +165,6 @@ if __name__ == "__main__":
     target = sys.argv[3]
     Sol = PrintSol(sol, dataset, target)
     avg = Sol.avg_len_axp()
+    num_nodes = Sol.num_nodes
     print("AVERAGE AXP LENGTH =", avg)
+    print("NUMBER OF NODES =", num_nodes)
