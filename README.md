@@ -66,4 +66,4 @@ pip install constraint
 
 ## Usage
 
-CSPSolver.py allow to solve a CSP and manually find a weak AXp of a decision.
+`CSPSolver.py` allow to solve a CSP and manually find a weak AXp of a decision.
