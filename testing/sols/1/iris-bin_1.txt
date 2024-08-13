@@ -1,6 +1,0 @@
-accuracy=0.9916 depth=2 test_accuracy=1
-5*: 9
- yes:4: 3
-     yes:class-1
-     no:class-0
- no:class-1
