@@ -258,7 +258,7 @@ We chose to base our testing on depth 7 DT's and depth 5 MDT's because the lengt
 
 \[ M = (1/5) * ( 2 + 4 * [ 1 * (3/4) + 2 * (1/4)] ) = (1/5) * 7 = 1.4 \]
 
-Where a XOR condition requires two features, the left branch of an OR condition requires one feature and the right branch (which is the negation) requires two features. Finally, the probability of following the left (respectively right) branch of an OR condition is $3/4$ (respectively $1/4$). Thus, we chose depth 5 DT's which gives us depth $5 * 1.4 = 7$ MDT's so we have round numbers for both depths and theoretically similar lengths of AXp's.
+Where a XOR condition requires two features, the left branch of an OR condition requires one feature and the right branch (which is the negation) requires two features. Finally, the probability of following the left (respectively right) branch of an OR condition is $3/4$ (respectively $1/4$). Thus, we chose depth 5 MDT's with an expected AXp length of $5 * 1.4 = 7$, meaning we pick depth 7 DT's so we theoretically have similar lengths of AXp's.
 
 We first made a Student's t-test to detect if there is a statistical significance between the accuracy of DT's and MDT's. With the result of the t-test, the average length of AXp's and the number of nodes in each tree, we can compare the two types of trees. All the information about the testing hardware, parameters and detailed result tables can be found in the \hyperref[chap:appendix]{appendix}.
 
