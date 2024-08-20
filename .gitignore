@@ -1,5 +1,1 @@
 .vscode/
-report/*
-!/report/report.tex
-!/report/references.bib
-!/report/logo.png
